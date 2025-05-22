@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0hrabmf30gmc"]
+
+[ext_resource type="PackedScene" uid="uid://cf21vha7jfgei" path="res://Player/PlayerModel/animated_monkey_man_trimmed.glb" id="1_2fqbm"]
+
+[node name="animated_monkey_man_trimmed" instance=ExtResource("1_2fqbm")]

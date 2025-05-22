@@ -1,0 +1,37 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://qks2yb18obuw"
+path="res://.godot/imported/monkey_man_testCleaned_normalsFixed_Image_25.png-d5cb7e5f54d3812f77bf535785f3c94b.ctex"
+metadata={
+"vram_texture": false
+}
+generator_parameters={
+"md5": "558b371ba3f855ad48b6e7b7917ae7b8"
+}
+
+[deps]
+
+source_file="res://Player/PlayerModel2/monkey_man_testCleaned_normalsFixed_Image_25.png"
+dest_files=["res://.godot/imported/monkey_man_testCleaned_normalsFixed_Image_25.png-d5cb7e5f54d3812f77bf535785f3c94b.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

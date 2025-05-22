@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpmupq3638lpj"]
+
+[ext_resource type="PackedScene" uid="uid://du0jhgclftpr6" path="res://Player/PlayerModel/rigged_hands_monkey_man.glb" id="1_rcewd"]
+
+[node name="rigged_hands_monkey_man" instance=ExtResource("1_rcewd")]

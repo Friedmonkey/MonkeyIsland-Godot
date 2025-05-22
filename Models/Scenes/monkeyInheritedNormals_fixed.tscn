@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cskkaqynupai8"]
+
+[ext_resource type="PackedScene" uid="uid://dcgmh0evfg4gj" path="res://Player/PlayerModel2/monkey_man_testCleaned_normalsFixed.glb" id="1_mihex"]
+
+[node name="monkey_man_testCleaned_normalsFixed" instance=ExtResource("1_mihex")]

@@ -137,8 +137,8 @@ var _custom_settings := [{
 
 
 func _enter_tree():
-	if not get_tree().has_user_signal(&"sgt_globals_params_changed"):
-		get_tree().add_user_signal(&"sgt_globals_params_changed")
+	if not get_tree().has_user_signal(&"fg_globals_params_changed"):
+		get_tree().add_user_signal(&"fg_globals_params_changed")
 	_verify_global_shader_parameters()
 	_enable_shaders(true)
 	_init_default_project_settings()
@@ -162,7 +162,7 @@ func _enter_tree():
 		"FriedGrass",
 		"MultiMeshInstance3D",
 		load("res://addons/fried_grass/grass.gd"),
-		load("res://addons/fried_grass/sgt_icon.svg")
+		load("res://addons/fried_grass/fg_icon.svg")
 	)
 	
 	_gui_toolbar = load("res://addons/fried_grass/toolbar.tscn").instantiate()
@@ -175,7 +175,7 @@ func _enter_tree():
 	add_control_to_container(EditorPlugin.CONTAINER_SPATIAL_EDITOR_MENU, _gui_toolbar_up)
 	_gui_toolbar_up.set_plugin(self)
 	
-	_inspector_plugin = load("res://addons/fried_grass/sgt_inspector.gd").new()
+	_inspector_plugin = load("res://addons/fried_grass/fg_inspector.gd").new()
 	add_inspector_plugin(_inspector_plugin)
 	
 	_raycast_3d = RayCast3D.new()
@@ -224,26 +224,26 @@ func _enable_plugin():
 func _disable_plugin():
 	_enable_shaders(false)
 	remove_autoload_singleton("FriedGrass")
-	if ProjectSettings.has_setting("shader_globals/sgt_legacy_renderer"):
-		ProjectSettings.set_setting("shader_globals/sgt_legacy_renderer", null)
-	if ProjectSettings.has_setting("shader_globals/sgt_player_position"):
-		ProjectSettings.set_setting("shader_globals/sgt_player_position", null)
-	if ProjectSettings.has_setting("shader_globals/sgt_player_mov"):
-		ProjectSettings.set_setting("shader_globals/sgt_player_mov", null)
-	if ProjectSettings.has_setting("shader_globals/sgt_normal_displacement"):
-		ProjectSettings.set_setting("shader_globals/sgt_normal_displacement", null)
-	if ProjectSettings.has_setting("shader_globals/sgt_motion_texture"):
-		ProjectSettings.set_setting("shader_globals/sgt_motion_texture", null)
-	if ProjectSettings.has_setting("shader_globals/sgt_wind_direction"):
-		ProjectSettings.set_setting("shader_globals/sgt_wind_direction", null)
-	if ProjectSettings.has_setting("shader_globals/sgt_wind_movement"):
-		ProjectSettings.set_setting("shader_globals/sgt_wind_movement", null)
-	if ProjectSettings.has_setting("shader_globals/sgt_wind_strength"):
-		ProjectSettings.set_setting("shader_globals/sgt_wind_strength", null)
-	if ProjectSettings.has_setting("shader_globals/sgt_wind_turbulence"):
-		ProjectSettings.set_setting("shader_globals/sgt_wind_turbulence", null)
-	if ProjectSettings.has_setting("shader_globals/sgt_wind_pattern"):
-		ProjectSettings.set_setting("shader_globals/sgt_wind_pattern", null)
+	if ProjectSettings.has_setting("shader_globals/fg_legacy_renderer"):
+		ProjectSettings.set_setting("shader_globals/fg_legacy_renderer", null)
+	if ProjectSettings.has_setting("shader_globals/fg_player_position"):
+		ProjectSettings.set_setting("shader_globals/fg_player_position", null)
+	if ProjectSettings.has_setting("shader_globals/fg_player_mov"):
+		ProjectSettings.set_setting("shader_globals/fg_player_mov", null)
+	if ProjectSettings.has_setting("shader_globals/fg_normal_displacement"):
+		ProjectSettings.set_setting("shader_globals/fg_normal_displacement", null)
+	if ProjectSettings.has_setting("shader_globals/fg_motion_texture"):
+		ProjectSettings.set_setting("shader_globals/fg_motion_texture", null)
+	if ProjectSettings.has_setting("shader_globals/fg_wind_direction"):
+		ProjectSettings.set_setting("shader_globals/fg_wind_direction", null)
+	if ProjectSettings.has_setting("shader_globals/fg_wind_movement"):
+		ProjectSettings.set_setting("shader_globals/fg_wind_movement", null)
+	if ProjectSettings.has_setting("shader_globals/fg_wind_strength"):
+		ProjectSettings.set_setting("shader_globals/fg_wind_strength", null)
+	if ProjectSettings.has_setting("shader_globals/fg_wind_turbulence"):
+		ProjectSettings.set_setting("shader_globals/fg_wind_turbulence", null)
+	if ProjectSettings.has_setting("shader_globals/fg_wind_pattern"):
+		ProjectSettings.set_setting("shader_globals/fg_wind_pattern", null)
 	# Remove custom settings from Project Settings
 	for entry in _custom_settings:
 		if ProjectSettings.has_setting(entry["name"]):
@@ -390,78 +390,78 @@ func _forward_3d_gui_input(viewport_camera: Camera3D, event: InputEvent) -> int:
 
 
 func _verify_global_shader_parameters():
-	if not ProjectSettings.has_setting("shader_globals/sgt_legacy_renderer"):
-		ProjectSettings.set_setting("shader_globals/sgt_legacy_renderer", {
+	if not ProjectSettings.has_setting("shader_globals/fg_legacy_renderer"):
+		ProjectSettings.set_setting("shader_globals/fg_legacy_renderer", {
 			"type": "int",
 			"value": 0
 		})
-		if RenderingServer.global_shader_parameter_get("sgt_legacy_renderer") == null:
+		if RenderingServer.global_shader_parameter_get("fg_legacy_renderer") == null:
 			var using_legacy_renderer = ProjectSettings.get_setting_with_override("rendering/renderer/rendering_method")	== "gl_compatibility"
-			RenderingServer.global_shader_parameter_add("sgt_legacy_renderer", RenderingServer.GLOBAL_VAR_TYPE_INT, 1 if using_legacy_renderer else 0)
+			RenderingServer.global_shader_parameter_add("fg_legacy_renderer", RenderingServer.GLOBAL_VAR_TYPE_INT, 1 if using_legacy_renderer else 0)
 	
-	if not ProjectSettings.has_setting("shader_globals/sgt_player_position"):
-		ProjectSettings.set_setting("shader_globals/sgt_player_position", {
+	if not ProjectSettings.has_setting("shader_globals/fg_player_position"):
+		ProjectSettings.set_setting("shader_globals/fg_player_position", {
 			"type": "vec3",
 			"value": Vector3(1000000, 1000000, 1000000)
 		})
-		if RenderingServer.global_shader_parameter_get("sgt_player_position") == null:
-			RenderingServer.global_shader_parameter_add("sgt_player_position", RenderingServer.GLOBAL_VAR_TYPE_VEC3, Vector3(1000000,1000000,1000000))
-	if not ProjectSettings.has_setting("shader_globals/sgt_player_mov"):
-		ProjectSettings.set_setting("shader_globals/sgt_player_mov", {
+		if RenderingServer.global_shader_parameter_get("fg_player_position") == null:
+			RenderingServer.global_shader_parameter_add("fg_player_position", RenderingServer.GLOBAL_VAR_TYPE_VEC3, Vector3(1000000,1000000,1000000))
+	if not ProjectSettings.has_setting("shader_globals/fg_player_mov"):
+		ProjectSettings.set_setting("shader_globals/fg_player_mov", {
 			"type": "vec3",
 			"value": Vector3.ZERO
 		})
-		if RenderingServer.global_shader_parameter_get("sgt_player_mov") == null:
-			RenderingServer.global_shader_parameter_add("sgt_player_mov", RenderingServer.GLOBAL_VAR_TYPE_VEC3, Vector3.ZERO)
-	if not ProjectSettings.has_setting("shader_globals/sgt_normal_displacement"):
-		ProjectSettings.set_setting("shader_globals/sgt_normal_displacement", {
+		if RenderingServer.global_shader_parameter_get("fg_player_mov") == null:
+			RenderingServer.global_shader_parameter_add("fg_player_mov", RenderingServer.GLOBAL_VAR_TYPE_VEC3, Vector3.ZERO)
+	if not ProjectSettings.has_setting("shader_globals/fg_normal_displacement"):
+		ProjectSettings.set_setting("shader_globals/fg_normal_displacement", {
 			"type": "sampler2D",
 			"value": "res://addons/fried_grass/images/normal.png"
 		})
-		if RenderingServer.global_shader_parameter_get("sgt_normal_displacement") == null:
-			RenderingServer.global_shader_parameter_add("sgt_normal_displacement", RenderingServer.GLOBAL_VAR_TYPE_SAMPLER2D, load("res://addons/fried_grass/images/normal.png"))
-	if not ProjectSettings.has_setting("shader_globals/sgt_motion_texture"):
-		ProjectSettings.set_setting("shader_globals/sgt_motion_texture", {
+		if RenderingServer.global_shader_parameter_get("fg_normal_displacement") == null:
+			RenderingServer.global_shader_parameter_add("fg_normal_displacement", RenderingServer.GLOBAL_VAR_TYPE_SAMPLER2D, load("res://addons/fried_grass/images/normal.png"))
+	if not ProjectSettings.has_setting("shader_globals/fg_motion_texture"):
+		ProjectSettings.set_setting("shader_globals/fg_motion_texture", {
 			"type": "sampler2D",
 			"value": "res://addons/fried_grass/images/motion.png"
 		})
-		if RenderingServer.global_shader_parameter_get("sgt_motion_texture") == null:
-			RenderingServer.global_shader_parameter_add("sgt_motion_texture", RenderingServer.GLOBAL_VAR_TYPE_SAMPLER2D, load("res://addons/fried_grass/images/motion.png"))
-	if not ProjectSettings.has_setting("shader_globals/sgt_wind_direction"):
-		ProjectSettings.set_setting("shader_globals/sgt_wind_direction", {
+		if RenderingServer.global_shader_parameter_get("fg_motion_texture") == null:
+			RenderingServer.global_shader_parameter_add("fg_motion_texture", RenderingServer.GLOBAL_VAR_TYPE_SAMPLER2D, load("res://addons/fried_grass/images/motion.png"))
+	if not ProjectSettings.has_setting("shader_globals/fg_wind_direction"):
+		ProjectSettings.set_setting("shader_globals/fg_wind_direction", {
 			"type": "vec3",
 			"value": Vector3(1, 0, 0)
 		})
-		if RenderingServer.global_shader_parameter_get("sgt_wind_direction") == null:
-			RenderingServer.global_shader_parameter_add("sgt_wind_direction", RenderingServer.GLOBAL_VAR_TYPE_VEC3, Vector3(1, 0, 0))
-	if not ProjectSettings.has_setting("shader_globals/sgt_wind_movement"):
-		ProjectSettings.set_setting("shader_globals/sgt_wind_movement", {
+		if RenderingServer.global_shader_parameter_get("fg_wind_direction") == null:
+			RenderingServer.global_shader_parameter_add("fg_wind_direction", RenderingServer.GLOBAL_VAR_TYPE_VEC3, Vector3(1, 0, 0))
+	if not ProjectSettings.has_setting("shader_globals/fg_wind_movement"):
+		ProjectSettings.set_setting("shader_globals/fg_wind_movement", {
 			"type": "vec3",
 			"value": Vector2.ZERO
 		})
-		if RenderingServer.global_shader_parameter_get("sgt_wind_movement") == null:
-			RenderingServer.global_shader_parameter_add("sgt_wind_movement", RenderingServer.GLOBAL_VAR_TYPE_VEC3, Vector3.ZERO)
-	if not ProjectSettings.has_setting("shader_globals/sgt_wind_strength"):
-		ProjectSettings.set_setting("shader_globals/sgt_wind_strength", {
+		if RenderingServer.global_shader_parameter_get("fg_wind_movement") == null:
+			RenderingServer.global_shader_parameter_add("fg_wind_movement", RenderingServer.GLOBAL_VAR_TYPE_VEC3, Vector3.ZERO)
+	if not ProjectSettings.has_setting("shader_globals/fg_wind_strength"):
+		ProjectSettings.set_setting("shader_globals/fg_wind_strength", {
 			"type": "float",
 			"value": 0.15
 		})
-		if RenderingServer.global_shader_parameter_get("sgt_wind_strength") == null:
-			RenderingServer.global_shader_parameter_add("sgt_wind_strength", RenderingServer.GLOBAL_VAR_TYPE_FLOAT, 0.15)
-	if not ProjectSettings.has_setting("shader_globals/sgt_wind_turbulence"):
-		ProjectSettings.set_setting("shader_globals/sgt_wind_turbulence", {
+		if RenderingServer.global_shader_parameter_get("fg_wind_strength") == null:
+			RenderingServer.global_shader_parameter_add("fg_wind_strength", RenderingServer.GLOBAL_VAR_TYPE_FLOAT, 0.15)
+	if not ProjectSettings.has_setting("shader_globals/fg_wind_turbulence"):
+		ProjectSettings.set_setting("shader_globals/fg_wind_turbulence", {
 			"type": "float",
 			"value": 1.0
 		})
-		if RenderingServer.global_shader_parameter_get("sgt_wind_turbulence") == null:
-			RenderingServer.global_shader_parameter_add("sgt_wind_turbulence", RenderingServer.GLOBAL_VAR_TYPE_FLOAT, 1.0)
-	if not ProjectSettings.has_setting("shader_globals/sgt_wind_pattern"):
-		ProjectSettings.set_setting("shader_globals/sgt_wind_pattern", {
+		if RenderingServer.global_shader_parameter_get("fg_wind_turbulence") == null:
+			RenderingServer.global_shader_parameter_add("fg_wind_turbulence", RenderingServer.GLOBAL_VAR_TYPE_FLOAT, 1.0)
+	if not ProjectSettings.has_setting("shader_globals/fg_wind_pattern"):
+		ProjectSettings.set_setting("shader_globals/fg_wind_pattern", {
 			"type": "sampler2D",
 			"value": "res://addons/fried_grass/images/wind_pattern.png"
 		})
-		if RenderingServer.global_shader_parameter_get("sgt_wind_pattern") == null:
-			RenderingServer.global_shader_parameter_add("sgt_wind_pattern", RenderingServer.GLOBAL_VAR_TYPE_SAMPLER2D, load("res://addons/fried_grass/images/wind_pattern.png"))
+		if RenderingServer.global_shader_parameter_get("fg_wind_pattern") == null:
+			RenderingServer.global_shader_parameter_add("fg_wind_pattern", RenderingServer.GLOBAL_VAR_TYPE_SAMPLER2D, load("res://addons/fried_grass/images/wind_pattern.png"))
 	if not ProjectSettings.has_setting("autoload/FriedGrass"):
 		add_autoload_singleton("FriedGrass", "res://addons/fried_grass/singleton.tscn")
 
@@ -527,12 +527,12 @@ func _init_default_project_settings() -> void:
 
 func _update_gui():
 	if _grass_selected != null:
-		_gui_toolbar.slider_radius.value = _grass_selected.sgt_radius
-		_gui_toolbar.slider_density.value = _grass_selected.sgt_density
-		_gui_toolbar.edit_scale.value = _grass_selected.sgt_scale
-		_gui_toolbar.edit_rotation.value = _grass_selected.sgt_rotation
-		_gui_toolbar.edit_rotation_rand.value = _grass_selected.sgt_rotation_rand
-		_gui_toolbar.edit_distance.value = _grass_selected.sgt_dist_min
+		_gui_toolbar.slider_radius.value = _grass_selected.fg_radius
+		_gui_toolbar.slider_density.value = _grass_selected.fg_density
+		_gui_toolbar.edit_scale.value = _grass_selected.fg_scale
+		_gui_toolbar.edit_rotation.value = _grass_selected.fg_rotation
+		_gui_toolbar.edit_rotation_rand.value = _grass_selected.fg_rotation_rand
+		_gui_toolbar.edit_distance.value = _grass_selected.fg_dist_min
 		_gui_toolbar.set_current_grass(_grass_selected)
 		_gui_toolbar_up.set_current_grass(_grass_selected)
 		if _grass_selected.multimesh != null:
@@ -581,36 +581,36 @@ func _on_slider_radius_value_changed(value : float):
 	_edit_radius = value
 	_decal_pointer.extents = Vector3(_edit_radius, DEPTH_BRUSH, _edit_radius)
 	if _grass_selected != null:
-		_grass_selected.sgt_radius = value
+		_grass_selected.fg_radius = value
 
 
 func _on_slider_density_value_changed(value : float):
 	_edit_density = value
 	if _grass_selected != null:
-		_grass_selected.sgt_density = value
+		_grass_selected.fg_density = value
 
 
 func _on_edit_scale_value_changed(value : float):
 	_edit_scale = Vector3(value, value, value)
 	if _grass_selected != null:
-		_grass_selected.sgt_scale = value
+		_grass_selected.fg_scale = value
 
 
 func _on_edit_rotation_value_changed(value : float):
 	_edit_rotation = value
 	if _grass_selected != null:
-		_grass_selected.sgt_rotation = value
+		_grass_selected.fg_rotation = value
 
 
 func _on_edit_rotation_rand_value_changed(value : float):
 	_edit_rotation_rand = value
 	if _grass_selected != null:
-		_grass_selected.sgt_rotation_rand = value
+		_grass_selected.fg_rotation_rand = value
 
 
 func _on_edit_distance_value_changed(value : float):
 	if _grass_selected != null:
-		_grass_selected.sgt_dist_min = value
+		_grass_selected.fg_dist_min = value
 
 
 func _on_set_draw(value : bool):
@@ -644,9 +644,9 @@ func _eval_brush():
 	if _grass_selected == null:
 		return
 	if _edit_fill:
-		var steep : float = _grass_selected.sgt_dist_min
+		var steep : float = _grass_selected.fg_dist_min
 		var list_trans := []
-		var follow_normal : bool = _grass_selected.sgt_follow_normal
+		var follow_normal : bool = _grass_selected.fg_follow_normal
 		if steep < 0.05:
 			steep = 0.4
 		_grass_selected.temp_dist_min = steep
@@ -681,7 +681,7 @@ func _eval_brush():
 			x += steep
 		_grass_selected.add_grass_batch(list_trans)
 	elif _edit_draw:
-		var follow_normal : bool = _grass_selected.sgt_follow_normal
+		var follow_normal : bool = _grass_selected.fg_follow_normal
 		for i in _edit_density:
 			var variation = Vector3.RIGHT * _edit_radius * randf()
 			variation = variation.rotated(Vector3.UP, randf() * TAU)

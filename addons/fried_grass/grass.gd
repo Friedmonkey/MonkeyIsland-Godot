@@ -123,9 +123,9 @@ var wind_strength := 0.15 : set = _on_set_wind_strength
 var wind_turbulence := 1.0 : set = _on_set_wind_turbulence
 var wind_pattern : Texture = null : set = _on_set_wind_pattern
 
-var _default_mesh : Mesh = load("res://addons/fried_grass/default_mesh.tres").duplicate()
+var _default_mesh : Mesh = load("res://addons/fried_grass/shaded_grass/grass_high.obj").duplicate()
 var _buffer_add : Array[Transform3D] = []
-var _material := load("res://addons/fried_grass/materials/grass.material").duplicate() as ShaderMaterial
+var _material := load("res://addons/fried_grass/shaded_grass/mat_grass.tres").duplicate() as ShaderMaterial
 var _force_update_multimesh := false
 var _properties = []
 var _node_height_map = null

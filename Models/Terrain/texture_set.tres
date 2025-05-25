@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="TextureSetsResource" load_steps=7 format=3 uid="uid://2me8f2wpbj5h"]
+
+[ext_resource type="Script" uid="uid://043vjblb04jf" path="res://addons/terrabrush/Scripts/EditorResources/TextureSetsResource.cs" id="1_2q1t2"]
+[ext_resource type="Texture2D" uid="uid://bpnn2pq1v8yyh" path="res://Materials/Grass/Grass008_1K-PNG_Color.png" id="1_06pi8"]
+[ext_resource type="Texture2D" uid="uid://crxeqsjwfkajn" path="res://Materials/Grass/Grass008_1K-PNG_NormalGL.png" id="2_jxcca"]
+[ext_resource type="Texture2D" uid="uid://d14w1tvxhvpta" path="res://Materials/Grass/Grass008_1K-PNG_Roughness.png" id="3_vkmby"]
+[ext_resource type="Script" uid="uid://c2l8t4xcdxwvu" path="res://addons/terrabrush/Scripts/EditorResources/TextureSetResource.cs" id="4_5jrkw"]
+
+[sub_resource type="Resource" id="Resource_w5mhh"]
+script = ExtResource("4_5jrkw")
+Name = ""
+AlbedoTexture = ExtResource("1_06pi8")
+NormalTexture = ExtResource("2_jxcca")
+RoughnessTexture = ExtResource("3_vkmby")
+TextureDetail = -1
+Triplanar = false
+metadata/_custom_type_script = "uid://c2l8t4xcdxwvu"
+
+[resource]
+script = ExtResource("1_2q1t2")
+TextureSets = [SubResource("Resource_w5mhh")]
+metadata/_custom_type_script = "uid://043vjblb04jf"

@@ -12,8 +12,16 @@ config_version=5
 
 config/name="MonkeyIsland"
 run/main_scene="uid://dxo8m8y6lnqo1"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="res://icon.svg"
+
+[dotnet]
+
+project/assembly_name="MonkeyIsland"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/terrabrush/plugin.cfg")
 
 [input]
 

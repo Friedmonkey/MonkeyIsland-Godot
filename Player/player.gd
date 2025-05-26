@@ -59,6 +59,11 @@ func _physics_process(_delta: float) -> void:
 	if is_movement_ongoing():
 		changed_movement_direction.emit(movement_direction)
 		
+		if (movement_direction != Vector3.ZERO):
+			#var idk = $"../TerraBrush".GetPositionInformation(movement_direction.x, movement_direction.y)
+			#var idk2 = $"../TerraBrush".mater
+			pass
+			
 	if is_on_floor():
 		air_jump_counter = 0
 	#elif air_jump_counter:

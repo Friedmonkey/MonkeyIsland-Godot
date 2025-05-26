@@ -108,11 +108,11 @@ func updateRotation(delta):
 	#self.environment.background_energy_multiplier = multiplier
 	
 	var day_brightness : float = 1.25
-	var night_brightness : float = 2.75
+	var night_brightness : float = 3.75
 
 	# Transition ranges
-	var morning_start := 500.0
-	var day_start := 550.0
+	var morning_start := 540.0
+	var day_start := 590.0
 	var evening_start := 1850.0
 	var night_start := 1900.0
 

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="TextureSetsResource" load_steps=11 format=3 uid="uid://2me8f2wpbj5h"]
+[gd_resource type="Resource" script_class="TextureSetsResource" load_steps=15 format=3 uid="uid://2me8f2wpbj5h"]
 
 [ext_resource type="Script" uid="uid://043vjblb04jf" path="res://addons/terrabrush/Scripts/EditorResources/TextureSetsResource.cs" id="1_2q1t2"]
 [ext_resource type="Texture2D" uid="uid://bpnn2pq1v8yyh" path="res://Materials/Grass/Grass008_1K-PNG_Color.png" id="1_06pi8"]
@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://cyds7pm8thl5k" path="res://Materials/Rock/Rock058_1K-PNG_Color.png" id="5_5jrkw"]
 [ext_resource type="Texture2D" uid="uid://cvfer1ixrvsad" path="res://Materials/Rock/Rock058_1K-PNG_NormalGL.png" id="6_w5mhh"]
 [ext_resource type="Texture2D" uid="uid://cjd2ur6e7ev5n" path="res://Materials/Rock/Rock058_1K-PNG_Roughness.png" id="7_bqu3y"]
+[ext_resource type="Texture2D" uid="uid://ralaeq8moim3" path="res://Materials/Sand/Ground080_1K-JPG_Color.jpg" id="8_leo8f"]
+[ext_resource type="Texture2D" uid="uid://8yq3aaq3thsh" path="res://Materials/Sand/Ground080_1K-JPG_NormalGL.jpg" id="9_lbdu3"]
+[ext_resource type="Texture2D" uid="uid://bkmkqs1688uu0" path="res://Materials/Sand/Ground080_1K-JPG_Roughness.jpg" id="10_3jm36"]
 
 [sub_resource type="Resource" id="Resource_w5mhh"]
 script = ExtResource("4_5jrkw")
@@ -29,7 +32,17 @@ TextureDetail = -1
 Triplanar = false
 metadata/_custom_type_script = "uid://c2l8t4xcdxwvu"
 
+[sub_resource type="Resource" id="Resource_lm81m"]
+script = ExtResource("4_5jrkw")
+Name = "Sand"
+AlbedoTexture = ExtResource("8_leo8f")
+NormalTexture = ExtResource("9_lbdu3")
+RoughnessTexture = ExtResource("10_3jm36")
+TextureDetail = -1
+Triplanar = false
+metadata/_custom_type_script = "uid://c2l8t4xcdxwvu"
+
 [resource]
 script = ExtResource("1_2q1t2")
-TextureSets = [SubResource("Resource_w5mhh"), SubResource("Resource_leo8f")]
+TextureSets = [SubResource("Resource_w5mhh"), SubResource("Resource_leo8f"), SubResource("Resource_lm81m")]
 metadata/_custom_type_script = "uid://043vjblb04jf"

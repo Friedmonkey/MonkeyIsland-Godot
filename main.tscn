@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://dxo8m8y6lnqo1"]
+[gd_scene load_steps=87 format=3 uid="uid://dxo8m8y6lnqo1"]
 
 [ext_resource type="PackedScene" uid="uid://obfkqco2xodm" path="res://Player/player.tscn" id="1_ig7tw"]
 [ext_resource type="Material" uid="uid://clytu0rh8kfc7" path="res://Materials/grass.tres" id="1_lquwl"]
@@ -82,7 +82,7 @@ center_offset = Vector3(0, 0.5, 0)
 script = ExtResource("6_2cqfq")
 Strategy = 1
 Mesh = SubResource("QuadMesh_0odxb")
-MeshScale = Vector3(1, 1, 1)
+MeshScale = Vector3(1.5, 1.5, 1.5)
 WindStrength = 0.1
 VisualInstanceLayers = 1
 LODLevels = 3
@@ -163,6 +163,11 @@ SnowTexture = ExtResource("11_getpj")
 script = ExtResource("10_2cqfq")
 Zones = [SubResource("Resource_f1p13")]
 
+[sub_resource type="QuadMesh" id="QuadMesh_34ol3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c2n8d"]
+albedo_color = Color(0.224705, 0.359736, 0.867501, 1)
+
 [node name="Main" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
@@ -215,9 +220,9 @@ metadata/_custom_type_script = "uid://i5jcj7ukvoen"
 metadata/_edit_lock_ = true
 
 [node name="GodotSky" parent="." instance=ExtResource("74_34ol3")]
-timeOfDay = 700.0
+timeOfDay = 500.0
 simulateTime = true
-rateOfTime = 5.0
+rateOfTime = 2.5
 skyRotation = 47.0
 
 [node name="SunLight" parent="GodotSky/SunMoon/Sun" index="0"]
@@ -225,5 +230,10 @@ light_specular = 5.0
 
 [node name="MoonLight" parent="GodotSky/SunMoon/Moon" index="0"]
 light_specular = 5.0
+
+[node name="OceanWater" type="MeshInstance3D" parent="."]
+transform = Transform3D(653.184, 0, 0, 0, -1.69258e-05, 141.12, 0, -567.936, -3.43323e-06, 0, -3.3, 0)
+mesh = SubResource("QuadMesh_34ol3")
+surface_material_override/0 = SubResource("StandardMaterial3D_c2n8d")
 
 [editable path="GodotSky"]

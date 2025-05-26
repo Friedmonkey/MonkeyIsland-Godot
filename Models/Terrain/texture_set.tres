@@ -14,7 +14,7 @@
 
 [sub_resource type="Resource" id="Resource_w5mhh"]
 script = ExtResource("4_5jrkw")
-Name = ""
+Name = "Grass"
 AlbedoTexture = ExtResource("1_06pi8")
 NormalTexture = ExtResource("2_jxcca")
 RoughnessTexture = ExtResource("3_vkmby")
@@ -24,7 +24,7 @@ metadata/_custom_type_script = "uid://c2l8t4xcdxwvu"
 
 [sub_resource type="Resource" id="Resource_leo8f"]
 script = ExtResource("4_5jrkw")
-Name = ""
+Name = "Rock"
 AlbedoTexture = ExtResource("5_5jrkw")
 NormalTexture = ExtResource("6_w5mhh")
 RoughnessTexture = ExtResource("7_bqu3y")

@@ -1,12 +1,17 @@
-[gd_scene load_steps=87 format=3 uid="uid://dxo8m8y6lnqo1"]
+[gd_scene load_steps=92 format=3 uid="uid://dxo8m8y6lnqo1"]
 
 [ext_resource type="PackedScene" uid="uid://obfkqco2xodm" path="res://Player/player.tscn" id="1_ig7tw"]
 [ext_resource type="Material" uid="uid://clytu0rh8kfc7" path="res://Materials/grass.tres" id="1_lquwl"]
+[ext_resource type="AudioStream" uid="uid://by1tulnhl3cu8" path="res://Models/TerrainAssets/Sounds/footstep_grass_003.ogg" id="2_c2n8d"]
+[ext_resource type="AudioStream" uid="uid://dsqa02vl5r3pe" path="res://Models/TerrainAssets/Sounds/footstep_grass_000.ogg" id="2_phcyf"]
+[ext_resource type="AudioStream" uid="uid://di0grnb3gdfs7" path="res://Models/TerrainAssets/Sounds/footstep_grass_001.ogg" id="3_birbe"]
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="3_h2yge"]
 [ext_resource type="Resource" uid="uid://2me8f2wpbj5h" path="res://Models/Terrain/texture_set.tres" id="4_4c57u"]
+[ext_resource type="AudioStream" uid="uid://dpxmbuwa203s3" path="res://Models/TerrainAssets/Sounds/footstep_grass_002.ogg" id="4_f1p13"]
 [ext_resource type="Texture2D" uid="uid://budsvcva77tpb" path="res://Models/Terrain/Heightmap_0_0.res" id="5_efxa6"]
 [ext_resource type="Texture2D" uid="uid://b0ky5ndko5o5k" path="res://Models/TerrainAssets/Foliage/sprite_0001.png" id="5_vivmo"]
 [ext_resource type="Script" uid="uid://dgf8vwa2n8r11" path="res://addons/terrabrush/Scripts/EditorResources/FoliageDefinitionResource.cs" id="6_2cqfq"]
+[ext_resource type="AudioStream" uid="uid://0degotd2qq62" path="res://Models/TerrainAssets/Sounds/footstep_grass_004.ogg" id="6_4obbf"]
 [ext_resource type="Texture2D" uid="uid://cker64uq4nv5" path="res://Models/Terrain/Splatmap_0_0_0.res" id="6_dg77c"]
 [ext_resource type="Script" uid="uid://d33x21vao7tj2" path="res://addons/terrabrush/Scripts/EditorResources/FoliageResource.cs" id="7_yaehf"]
 [ext_resource type="Script" uid="uid://d2qebwt0ednya" path="res://addons/terrabrush/Scripts/EditorResources/ZoneResource.cs" id="7_ycdy4"]
@@ -170,9 +175,11 @@ albedo_color = Color(0.428018, 0.59893, 0.954474, 1)
 
 [node name="Main" type="Node3D"]
 
-[node name="Player" parent="." node_paths=PackedStringArray("Terrain") instance=ExtResource("1_ig7tw")]
+[node name="Player" parent="." instance=ExtResource("1_ig7tw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 27.2, -68.2)
-Terrain = NodePath("../TerraTerrain")
+footstep_sounds = {
+"Grass": [ExtResource("2_phcyf"), ExtResource("3_birbe"), ExtResource("4_f1p13"), ExtResource("2_c2n8d"), ExtResource("6_4obbf"), null]
+}
 
 [node name="Map" type="Node" parent="."]
 
@@ -219,10 +226,10 @@ WaterDefinition = ExtResource("60_kkkcx")
 SnowDefinition = SubResource("Resource_birbe")
 TerrainZones = SubResource("Resource_4obbf")
 metadata/_custom_type_script = "uid://i5jcj7ukvoen"
-metadata/_edit_lock_ = false
+metadata/_edit_lock_ = true
 
 [node name="GodotSky" parent="." instance=ExtResource("74_34ol3")]
-timeOfDay = 650.0
+timeOfDay = 520.0
 simulateTime = true
 rateOfTime = 2.5
 skyRotation = 47.0

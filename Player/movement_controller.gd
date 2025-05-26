@@ -13,10 +13,10 @@ var speed : float
 var cam_rotation : float = 0
 var player_init_rotation : float
 
-var Terrain: Node
+#var Terrain: Node
 
 func _ready():
-	Terrain = player.Terrain
+	#Terrain = player.Terrain
 	player_init_rotation = player.rotation.y
 
 func _physics_process(delta):
@@ -31,16 +31,7 @@ func _physics_process(delta):
 	
 	player.velocity = player.velocity.lerp(velocity, acceleration * delta)
 	player.move_and_slide()
-	
-	if (player.is_on_floor()):
-		var pos = player.global_position
-		Terrain.call("AddInteractionPoint", pos.x, pos.z)
-	#%TerraTerrain.Add
-	#$TerraTerrain.AddInterac
-	#$"../TerraTerrain".add
-	#$TerraTerrain.add
-	#%TerraTerrain.Addinter
-	#player.position.x, player.position.y
+
 	
 	var target_rotation = atan2(direction.x, direction.z) - player_init_rotation
 	mesh_root.rotation.y = lerp_angle(mesh_root.rotation.y, target_rotation, rotation_speed * delta)

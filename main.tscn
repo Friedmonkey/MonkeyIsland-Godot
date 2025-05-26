@@ -138,7 +138,7 @@ metadata/_custom_type_script = "uid://comabiqrwe5u0"
 [sub_resource type="Resource" id="Resource_birbe"]
 script = ExtResource("68_phcyf")
 SnowFactor = 1.0
-SnowInnerOffset = 0.3
+SnowInnerOffset = 0.05
 SnowColorTexture = ExtResource("67_5dllo")
 SnowColorNormal = ExtResource("8_d13ii")
 SnowColorRoughness = ExtResource("66_gx4rg")
@@ -165,13 +165,14 @@ Zones = [SubResource("Resource_f1p13")]
 
 [sub_resource type="QuadMesh" id="QuadMesh_34ol3"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c2n8d"]
-albedo_color = Color(0.224705, 0.359736, 0.867501, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_34ol3"]
+albedo_color = Color(0.428018, 0.59893, 0.954474, 1)
 
 [node name="Main" type="Node3D"]
 
-[node name="Player" parent="." instance=ExtResource("1_ig7tw")]
+[node name="Player" parent="." node_paths=PackedStringArray("Terrain") instance=ExtResource("1_ig7tw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 27.2, -68.2)
+Terrain = NodePath("../TerraTerrain")
 
 [node name="Map" type="Node" parent="."]
 
@@ -207,7 +208,8 @@ transform = Transform3D(-0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, -0.984808
 use_collision = true
 size = Vector3(10, 2, 4)
 
-[node name="TerraBrush" type="Node3D" parent="."]
+[node name="TerraTerrain" type="Node3D" parent="."]
+unique_name_in_owner = true
 script = ExtResource("3_h2yge")
 DataPath = "res://Models/Terrain"
 TextureSets = ExtResource("4_4c57u")
@@ -232,8 +234,8 @@ light_specular = 5.0
 light_specular = 5.0
 
 [node name="OceanWater" type="MeshInstance3D" parent="."]
-transform = Transform3D(653.184, 0, 0, 0, -1.69258e-05, 141.12, 0, -567.936, -3.43323e-06, 0, -3.3, 0)
+transform = Transform3D(653.184, 0, 0, 0, -1.69258e-05, 141.12, 0, -567.936, -3.43323e-06, 0, -2.1, 0)
 mesh = SubResource("QuadMesh_34ol3")
-surface_material_override/0 = SubResource("StandardMaterial3D_c2n8d")
+surface_material_override/0 = SubResource("StandardMaterial3D_34ol3")
 
 [editable path="GodotSky"]

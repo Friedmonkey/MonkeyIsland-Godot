@@ -9,6 +9,7 @@ signal changed_movement_direction(_movement_direction: Vector3)
 @export var movement_states: Dictionary
 @export var max_air_jump : int = 1
 @export var jump_states : Dictionary
+@export var Terrain: Node
 
 var air_jump_counter : int = 0
 var current_movement_state_name : String
@@ -16,6 +17,8 @@ var movement_direction : Vector3
 var is_aiming : bool = false 
 
 func _ready() -> void:
+	if !Terrain or Terrain.name != "TerraTerrain": #terrible validation but idc
+		push_error("Terrain node not assigned (correctly)!")
 	set_movement_state("stand")
 	set_aiming(false)
 
@@ -59,13 +62,16 @@ func _physics_process(_delta: float) -> void:
 	if is_movement_ongoing():
 		changed_movement_direction.emit(movement_direction)
 		
-		if (movement_direction != Vector3.ZERO):
-			#var idk = $"../TerraBrush".GetPositionInformation(movement_direction.x, movement_direction.y)
-			#var idk2 = $"../TerraBrush".mater
-			pass
-			
+		#if (movement_direction != Vector3.ZERO):
+			##var idk = $"../TerraBrush".GetPositionInformation(movement_direction.x, movement_direction.y)
+			#var idk2 = $"../TerraBrush".AddInteractionPoint(movement_direction.x, movement_direction.y)
+			#pass
+	
 	if is_on_floor():
 		air_jump_counter = 0
+		#var pos = self.global_position
+		#%TerraTerrain.AddInteractionPoint(pos.x, pos.z)
+		#DebugDraw3D.draw_line(pos, pos+Vector3.DOWN, Color.RED)
 	#elif air_jump_counter:
 		#air_jump_counter = 1
 			

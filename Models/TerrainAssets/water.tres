@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="WaterResource" load_steps=4 format=3 uid="uid://xbq820ehwxf4"]
+
+[ext_resource type="Script" uid="uid://k2tvfxm6feg5" path="res://addons/terrabrush/Scripts/EditorResources/WaterResource.cs" id="1_kiru5"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_cih17"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_77bfa"]
+seamless = true
+noise = SubResource("FastNoiseLite_cih17")
+
+[resource]
+script = ExtResource("1_kiru5")
+WaterFactor = 0.5
+WaterInnerOffset = 0.2
+WaterColor = Color(0.126552, 0.292699, 0.972346, 1)
+WaterFresnelColor = Color(1, 1, 1, 1)
+WaterMetallic = 0.0
+WaterRoughness = 0.0
+WaterTimeScale = 0.1
+WaterStrength = 0.4
+WaterWave = SubResource("NoiseTexture2D_77bfa")
+WaterNoiseScale = 5.0
+WaterHeightScale = 0.15
+WaterColorDeep = Color(0.0271192, 0, 0.474869, 1)
+WaterColorShallow = Color(0.267478, 0.481034, 0.991571, 1)
+WaterBeersLaw = 2.0
+WaterDepthOffset = 0.75
+WaterEdgeScale = 0.1
+WaterNear = 0.5
+WaterFar = 100.0
+WaterEdgeColor = Color(0.744411, 0.981023, 0.998082, 1)
+VisualInstanceLayers = 1
+metadata/_custom_type_script = "uid://k2tvfxm6feg5"

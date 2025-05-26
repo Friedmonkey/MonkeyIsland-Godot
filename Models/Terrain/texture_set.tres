@@ -1,10 +1,13 @@
-[gd_resource type="Resource" script_class="TextureSetsResource" load_steps=7 format=3 uid="uid://2me8f2wpbj5h"]
+[gd_resource type="Resource" script_class="TextureSetsResource" load_steps=11 format=3 uid="uid://2me8f2wpbj5h"]
 
 [ext_resource type="Script" uid="uid://043vjblb04jf" path="res://addons/terrabrush/Scripts/EditorResources/TextureSetsResource.cs" id="1_2q1t2"]
 [ext_resource type="Texture2D" uid="uid://bpnn2pq1v8yyh" path="res://Materials/Grass/Grass008_1K-PNG_Color.png" id="1_06pi8"]
 [ext_resource type="Texture2D" uid="uid://crxeqsjwfkajn" path="res://Materials/Grass/Grass008_1K-PNG_NormalGL.png" id="2_jxcca"]
 [ext_resource type="Texture2D" uid="uid://d14w1tvxhvpta" path="res://Materials/Grass/Grass008_1K-PNG_Roughness.png" id="3_vkmby"]
 [ext_resource type="Script" uid="uid://c2l8t4xcdxwvu" path="res://addons/terrabrush/Scripts/EditorResources/TextureSetResource.cs" id="4_5jrkw"]
+[ext_resource type="Texture2D" uid="uid://cyds7pm8thl5k" path="res://Materials/Rock/Rock058_1K-PNG_Color.png" id="5_5jrkw"]
+[ext_resource type="Texture2D" uid="uid://cvfer1ixrvsad" path="res://Materials/Rock/Rock058_1K-PNG_NormalGL.png" id="6_w5mhh"]
+[ext_resource type="Texture2D" uid="uid://cjd2ur6e7ev5n" path="res://Materials/Rock/Rock058_1K-PNG_Roughness.png" id="7_bqu3y"]
 
 [sub_resource type="Resource" id="Resource_w5mhh"]
 script = ExtResource("4_5jrkw")
@@ -16,7 +19,17 @@ TextureDetail = -1
 Triplanar = false
 metadata/_custom_type_script = "uid://c2l8t4xcdxwvu"
 
+[sub_resource type="Resource" id="Resource_leo8f"]
+script = ExtResource("4_5jrkw")
+Name = ""
+AlbedoTexture = ExtResource("5_5jrkw")
+NormalTexture = ExtResource("6_w5mhh")
+RoughnessTexture = ExtResource("7_bqu3y")
+TextureDetail = -1
+Triplanar = false
+metadata/_custom_type_script = "uid://c2l8t4xcdxwvu"
+
 [resource]
 script = ExtResource("1_2q1t2")
-TextureSets = [SubResource("Resource_w5mhh")]
+TextureSets = [SubResource("Resource_w5mhh"), SubResource("Resource_leo8f")]
 metadata/_custom_type_script = "uid://043vjblb04jf"

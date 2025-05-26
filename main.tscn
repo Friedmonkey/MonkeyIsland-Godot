@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://dxo8m8y6lnqo1"]
+[gd_scene load_steps=87 format=3 uid="uid://dxo8m8y6lnqo1"]
 
 [ext_resource type="PackedScene" uid="uid://obfkqco2xodm" path="res://Player/player.tscn" id="1_ig7tw"]
 [ext_resource type="Material" uid="uid://clytu0rh8kfc7" path="res://Materials/grass.tres" id="1_lquwl"]
@@ -10,30 +10,21 @@
 [ext_resource type="Texture2D" uid="uid://cker64uq4nv5" path="res://Models/Terrain/Splatmap_0_0_0.res" id="6_dg77c"]
 [ext_resource type="Script" uid="uid://d33x21vao7tj2" path="res://addons/terrabrush/Scripts/EditorResources/FoliageResource.cs" id="7_yaehf"]
 [ext_resource type="Script" uid="uid://d2qebwt0ednya" path="res://addons/terrabrush/Scripts/EditorResources/ZoneResource.cs" id="7_ycdy4"]
-[ext_resource type="Texture2D" uid="uid://ccddske2rl15u" path="res://Models/TerrainAssets/tree_noise.tres" id="8_5dllo"]
 [ext_resource type="Texture2D" uid="uid://ctnlu3wsfeubt" path="res://Models/Terrain/Foliage_0_0_0.res" id="8_074og"]
-[ext_resource type="Script" uid="uid://k2tvfxm6feg5" path="res://addons/terrabrush/Scripts/EditorResources/WaterResource.cs" id="8_82xsv"]
 [ext_resource type="Texture2D" uid="uid://dsnnugjc0x3vs" path="res://Materials/Snow/Snow010A_1K-PNG_NormalDX.png" id="8_d13ii"]
-[ext_resource type="Texture2D" uid="uid://brd607uk8ee5b" path="res://Models/Terrain/Heightmap_0_-1.res" id="8_w48qg"]
-[ext_resource type="Texture2D" uid="uid://dnsfbj1t5vugn" path="res://Materials/Snow/Snow010A_1K-PNG_NormalGL.png" id="9_1u8w0"]
 [ext_resource type="PackedScene" uid="uid://p5cqa12ban31" path="res://Models/TerrainAssets/Trees/tree_default.glb" id="9_phcyf"]
-[ext_resource type="Texture2D" uid="uid://d3x2jjveg7mcp" path="res://Models/Terrain/Splatmap_0_-1_0.res" id="9_vivmo"]
-[ext_resource type="Texture2D" uid="uid://bevpt3y6o4mss" path="res://Materials/snow_noise.tres" id="10_0odxb"]
 [ext_resource type="Script" uid="uid://nt172hqpx1j5" path="res://addons/terrabrush/Scripts/EditorResources/ZonesResource.cs" id="10_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://cqp72glniacfl" path="res://Models/TerrainAssets/Trees/tree_default_dark.glb" id="10_birbe"]
 [ext_resource type="PackedScene" uid="uid://qu5mu4etqgmd" path="res://Models/TerrainAssets/Trees/tree_default_fall.glb" id="11_f1p13"]
 [ext_resource type="Texture2D" uid="uid://misvcgktcqvl" path="res://Models/Terrain/Snow_0_0.res" id="11_getpj"]
 [ext_resource type="PackedScene" uid="uid://dusbcrvapks5c" path="res://Models/TerrainAssets/Trees/tree_detailed.glb" id="12_4obbf"]
-[ext_resource type="Texture2D" uid="uid://6nsb1xgwky6r" path="res://Models/Terrain/Foliage_0_-1_0.res" id="12_cegan"]
 [ext_resource type="PackedScene" uid="uid://5qdoolfsy2mf" path="res://Models/TerrainAssets/Trees/tree_detailed_dark.glb" id="13_ovcoh"]
 [ext_resource type="Texture2D" uid="uid://dvsk6v2pesmk" path="res://Models/Terrain/Water_0_0.res" id="13_ryguw"]
 [ext_resource type="PackedScene" uid="uid://dxdqedve8g4u5" path="res://Models/TerrainAssets/Trees/tree_detailed_fall.glb" id="14_ppx11"]
 [ext_resource type="PackedScene" uid="uid://bmiambs24khsi" path="res://Models/TerrainAssets/Trees/tree_fat.glb" id="15_1yv1y"]
 [ext_resource type="PackedScene" uid="uid://co6libpnhsl1b" path="res://Models/TerrainAssets/Trees/tree_fat_darkh.glb" id="16_5yh34"]
-[ext_resource type="Texture2D" uid="uid://c52vskol4qutt" path="res://Models/Terrain/Snow_0_-1.res" id="17_d13ii"]
 [ext_resource type="PackedScene" uid="uid://b7hsgevhqflwn" path="res://Models/TerrainAssets/Trees/tree_fat_fall.glb" id="17_pjuso"]
 [ext_resource type="PackedScene" uid="uid://dsk17h3fd4fk7" path="res://Models/TerrainAssets/Trees/tree_oak.glb" id="18_23xmf"]
-[ext_resource type="Texture2D" uid="uid://dmty7uhr7agmr" path="res://Models/Terrain/Water_0_-1.res" id="19_1u8w0"]
 [ext_resource type="PackedScene" uid="uid://djdiibq7p7r62" path="res://Models/TerrainAssets/Trees/tree_oak_dark.glb" id="19_swlj1"]
 [ext_resource type="PackedScene" uid="uid://c0nk1yhnx7tb1" path="res://Models/TerrainAssets/Trees/tree_oak_fall.glb" id="20_yysqy"]
 [ext_resource type="PackedScene" uid="uid://gjj30q6ci3r1" path="res://Models/TerrainAssets/Trees/tree_palm.glb" id="21_n5t1e"]
@@ -76,8 +67,12 @@
 [ext_resource type="PackedScene" uid="uid://rrg06kduq14x" path="res://Models/TerrainAssets/Trees/tree_tall.glb" id="58_s4o1y"]
 [ext_resource type="Script" uid="uid://cgf61yxk46wa4" path="res://addons/terrabrush/Scripts/EditorResources/ObjectDefinitionResource.cs" id="59_7mmqq"]
 [ext_resource type="Script" uid="uid://comabiqrwe5u0" path="res://addons/terrabrush/Scripts/EditorResources/ObjectResource.cs" id="60_3exxq"]
+[ext_resource type="Resource" uid="uid://c5ppflsj03c1w" path="res://Models/TerrainAssets/DefaultWater.tres" id="60_kkkcx"]
+[ext_resource type="Texture2D" uid="uid://ucsjdaqa1vaw" path="res://Materials/Snow/Snow010A_1K-PNG_Displacement.png" id="65_wy5fy"]
+[ext_resource type="Texture2D" uid="uid://c8qdmv4cguju8" path="res://Materials/Snow/Snow010A_1K-PNG_Roughness.png" id="66_gx4rg"]
 [ext_resource type="Texture2D" uid="uid://b7bysxj7c5rpt" path="res://Models/Terrain/Object_0_0_0.res" id="67_5aa3q"]
-[ext_resource type="Texture2D" uid="uid://d23mcevy7clnf" path="res://Models/Terrain/Object_0_-1_0.res" id="74_bmvma"]
+[ext_resource type="Texture2D" uid="uid://bgfsjxao36an4" path="res://Materials/Snow/Snow010A_1K-PNG_Color.png" id="67_5dllo"]
+[ext_resource type="Script" uid="uid://di03satw2avie" path="res://addons/terrabrush/Scripts/EditorResources/SnowResource.cs" id="68_phcyf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -122,19 +117,25 @@ script = ExtResource("7_yaehf")
 Definition = SubResource("Resource_lswn8")
 metadata/_custom_type_script = "uid://d33x21vao7tj2"
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_34ol3"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_c2n8d"]
+seamless = true
+noise = SubResource("FastNoiseLite_34ol3")
+
 [sub_resource type="Resource" id="Resource_shlp4"]
 script = ExtResource("59_7mmqq")
 Strategy = 1
-ObjectFrequency = -1
-RandomRange = 1.0
-NoiseTexture = ExtResource("8_5dllo")
+ObjectFrequency = 8
+RandomRange = 3.0
+NoiseTexture = SubResource("NoiseTexture2D_c2n8d")
 RandomYRotation = true
-RandomSize = false
-RandomSizeFactorMin = 0.2
+RandomSize = true
+RandomSizeFactorMin = 0.8
 RandomSizeFactorMax = 1.2
 ObjectScenes = [ExtResource("9_phcyf"), ExtResource("10_birbe"), ExtResource("11_f1p13"), ExtResource("12_4obbf"), ExtResource("13_ovcoh"), ExtResource("14_ppx11"), ExtResource("15_1yv1y"), ExtResource("16_5yh34"), ExtResource("17_pjuso"), ExtResource("18_23xmf"), ExtResource("19_swlj1"), ExtResource("20_yysqy"), ExtResource("21_n5t1e"), ExtResource("22_h6isl"), ExtResource("23_53bls"), ExtResource("24_lwnsi"), ExtResource("25_41lik"), ExtResource("26_jbvwl"), ExtResource("27_sn1fb"), ExtResource("28_yvsr8"), ExtResource("29_vieuh"), ExtResource("30_yjja3"), ExtResource("31_l0gw7"), ExtResource("32_inymm"), ExtResource("33_jcxqu"), ExtResource("34_0arob"), ExtResource("35_dij0e"), ExtResource("36_k1udn"), ExtResource("37_wat4s"), ExtResource("38_ywjan"), ExtResource("39_m74q3"), ExtResource("40_tko6h"), ExtResource("41_am8a1"), ExtResource("42_8dc3g"), ExtResource("43_htgcl"), ExtResource("44_smeu8"), ExtResource("45_f3y11"), ExtResource("46_cpm2s"), ExtResource("47_u81y6"), ExtResource("48_rt5wr"), ExtResource("49_mnw77"), ExtResource("50_vjgyh"), ExtResource("51_d5iia"), ExtResource("52_asu84"), ExtResource("53_qwt6e"), ExtResource("54_off2o"), ExtResource("55_tttfs"), ExtResource("56_1iygd"), ExtResource("57_g5xqc"), ExtResource("58_s4o1y")]
-LODList = null
-LODMeshes = null
+LODList = []
+LODMeshes = []
 UpdateDistanceThreshold = 1.0
 UpdateTimeFrequency = 0.1
 VisualInstanceLayers = 1
@@ -146,33 +147,21 @@ Definition = SubResource("Resource_shlp4")
 Hide = false
 metadata/_custom_type_script = "uid://comabiqrwe5u0"
 
-[sub_resource type="Resource" id="Resource_xuqvo"]
-script = ExtResource("8_82xsv")
-WaterFactor = 1.0
-WaterInnerOffset = 0.2
-WaterColor = Color(0.126552, 0.292699, 0.972346, 1)
-WaterFresnelColor = Color(1, 1, 1, 1)
-WaterMetallic = 0.0
-WaterRoughness = 0.0
-WaterNormalMap = ExtResource("8_d13ii")
-WaterNormalMap2 = ExtResource("9_1u8w0")
-WaterTimeScale = 0.1
-WaterStrength = 0.4
-WaterWave = ExtResource("10_0odxb")
-WaterNoiseScale = 10.0
-WaterHeightScale = 0.15
-WaterColorDeep = Color(0.0271192, 0, 0.474869, 1)
-WaterColorShallow = Color(0.267478, 0.481034, 0.991571, 1)
-WaterBeersLaw = 2.0
-WaterDepthOffset = -0.75
-WaterEdgeScale = 0.1
-WaterNear = 0.5
-WaterFar = 100.0
-WaterEdgeColor = Color(0.744411, 0.981023, 0.998082, 1)
+[sub_resource type="Resource" id="Resource_birbe"]
+script = ExtResource("68_phcyf")
+SnowFactor = 1.0
+SnowInnerOffset = 0.3
+SnowColorTexture = ExtResource("67_5dllo")
+SnowColorNormal = ExtResource("8_d13ii")
+SnowColorRoughness = ExtResource("66_gx4rg")
+SnowColorDetail = 20.0
+Noise = ExtResource("65_wy5fy")
+NoiseFactor = 0.0
+Metallic = 0.0
 VisualInstanceLayers = 1
-metadata/_custom_type_script = "uid://k2tvfxm6feg5"
+metadata/_custom_type_script = "uid://di03satw2avie"
 
-[sub_resource type="Resource" id="Resource_yaehf"]
+[sub_resource type="Resource" id="Resource_f1p13"]
 script = ExtResource("7_ycdy4")
 ZonePosition = Vector2i(0, 0)
 HeightMapTexture = ExtResource("5_efxa6")
@@ -182,19 +171,9 @@ ObjectsTexture = [ExtResource("67_5aa3q")]
 WaterTexture = ExtResource("13_ryguw")
 SnowTexture = ExtResource("11_getpj")
 
-[sub_resource type="Resource" id="Resource_074og"]
-script = ExtResource("7_ycdy4")
-ZonePosition = Vector2i(0, -1)
-HeightMapTexture = ExtResource("8_w48qg")
-SplatmapsTexture = [ExtResource("9_vivmo")]
-FoliagesTexture = [ExtResource("12_cegan")]
-ObjectsTexture = [ExtResource("74_bmvma")]
-WaterTexture = ExtResource("19_1u8w0")
-SnowTexture = ExtResource("17_d13ii")
-
-[sub_resource type="Resource" id="Resource_cegan"]
+[sub_resource type="Resource" id="Resource_4obbf"]
 script = ExtResource("10_2cqfq")
-Zones = [SubResource("Resource_yaehf"), SubResource("Resource_074og")]
+Zones = [SubResource("Resource_f1p13")]
 
 [node name="Main" type="Node3D"]
 
@@ -250,7 +229,8 @@ DataPath = "res://Models/Terrain"
 TextureSets = ExtResource("4_4c57u")
 Foliages = [SubResource("Resource_a6jrf")]
 Objects = [SubResource("Resource_2n44k")]
-WaterDefinition = SubResource("Resource_xuqvo")
-TerrainZones = SubResource("Resource_cegan")
+WaterDefinition = ExtResource("60_kkkcx")
+SnowDefinition = SubResource("Resource_birbe")
+TerrainZones = SubResource("Resource_4obbf")
 metadata/_custom_type_script = "uid://i5jcj7ukvoen"
 metadata/_edit_lock_ = true

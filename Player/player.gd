@@ -87,12 +87,11 @@ func handle_floor():
 		play_footstep_sound(material_name)
 
 func play_footstep_sound(material_name: String) -> void:
-	return
 	if material_name in footstep_sounds:
 		var sounds = footstep_sounds[material_name]
 		var sound = sounds[randi() % sounds.size()]
-		$FootstepPlayer.stream = sound
-		$FootstepPlayer.play()
+		$AudioStreamPlayer.stream = sound
+		$AudioStreamPlayer.play()
 	else:
 		print("No footstep sound mapped for material:", material_name)
 

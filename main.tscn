@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://dxo8m8y6lnqo1"]
+[gd_scene load_steps=96 format=3 uid="uid://dxo8m8y6lnqo1"]
 
 [ext_resource type="PackedScene" uid="uid://obfkqco2xodm" path="res://Player/player.tscn" id="1_ig7tw"]
 [ext_resource type="Material" uid="uid://clytu0rh8kfc7" path="res://Materials/grass.tres" id="1_lquwl"]
@@ -79,6 +79,7 @@
 [ext_resource type="Texture2D" uid="uid://bgfsjxao36an4" path="res://Materials/Snow/Snow010A_1K-PNG_Color.png" id="67_5dllo"]
 [ext_resource type="Script" uid="uid://di03satw2avie" path="res://addons/terrabrush/Scripts/EditorResources/SnowResource.cs" id="68_phcyf"]
 [ext_resource type="PackedScene" uid="uid://1gfropwtqfbn" path="res://GodotSky/GodotSky.tscn" id="74_34ol3"]
+[ext_resource type="PackedScene" uid="uid://dxnwbn3vqjhme" path="res://character.tscn" id="80_birbe"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_0odxb"]
 center_offset = Vector3(0, 0.5, 0)
@@ -173,10 +174,19 @@ Zones = [SubResource("Resource_f1p13")]
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_34ol3"]
 albedo_color = Color(0.428018, 0.59893, 0.954474, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_birbe"]
+albedo_color = Color(0.759071, 0.107256, 0.767531, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f1p13"]
+albedo_color = Color(0.51497, 0.000405357, 0.571352, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4obbf"]
+albedo_color = Color(0.889595, 0.586096, 0.930473, 1)
+
 [node name="Main" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 27.2, -68.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 3.7, -7.9)
 footstep_sounds = {
 "Grass": [ExtResource("2_phcyf"), ExtResource("3_birbe"), ExtResource("4_f1p13"), ExtResource("2_c2n8d"), ExtResource("6_4obbf"), null]
 }
@@ -226,10 +236,10 @@ WaterDefinition = ExtResource("60_kkkcx")
 SnowDefinition = SubResource("Resource_birbe")
 TerrainZones = SubResource("Resource_4obbf")
 metadata/_custom_type_script = "uid://i5jcj7ukvoen"
-metadata/_edit_lock_ = true
+metadata/_edit_lock_ = false
 
 [node name="GodotSky" parent="." instance=ExtResource("74_34ol3")]
-timeOfDay = 520.0
+timeOfDay = 600.0
 simulateTime = true
 rateOfTime = 2.5
 skyRotation = 47.0
@@ -244,5 +254,12 @@ light_specular = 5.0
 transform = Transform3D(653.184, 0, 0, 0, -1.69258e-05, 141.12, 0, -567.936, -3.43323e-06, 0, -2.1, 0)
 mesh = SubResource("QuadMesh_34ol3")
 surface_material_override/0 = SubResource("StandardMaterial3D_34ol3")
+
+[node name="Character" parent="." instance=ExtResource("80_birbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, 0, -8)
+animation = "Idle"
+skin_material = SubResource("StandardMaterial3D_birbe")
+skin_detail_material = SubResource("StandardMaterial3D_f1p13")
+face_material = SubResource("StandardMaterial3D_4obbf")
 
 [editable path="GodotSky"]

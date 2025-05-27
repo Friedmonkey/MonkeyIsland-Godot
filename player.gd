@@ -6,6 +6,7 @@ signal pressed_jump(jump_state : JumpState)
 signal changed_movement_state(_movement_state: MovementState)
 signal changed_movement_direction(_movement_direction: Vector3)
 
+@export var jump_sounds : Array
 @export var punch_sounds : Array
 @export var footstep_sounds : Dictionary
 @export var movement_states: Dictionary
@@ -54,8 +55,8 @@ func _input(event):
 	
 func do_punch() -> void:
 	var sound = punch_sounds[randi() % punch_sounds.size()]
-	$PunchSound.stream = sound
-	$PunchSound.play()
+	$PlayerSound.stream = sound
+	$PlayerSound.play()
 	punch.emit()
 	
 func set_aiming(aiming : bool):
@@ -111,6 +112,12 @@ func play_footstep_sound(material_name: String) -> void:
 		$FootstepSound.play()
 	else:
 		print("No footstep sound mapped for material:", material_name)
+		
+func jump(jump_state : JumpState) -> void:
+	pressed_jump.emit(jump_state)
+	var sound = punch_sounds[randi() % punch_sounds.size()]
+	$PlayerSound.stream = sound
+	$PlayerSound.play()
 
 func _physics_process(delta: float) -> void:
 	if is_movement_ongoing():
@@ -143,7 +150,7 @@ func _physics_process(delta: float) -> void:
 			if air_jump_counter > 0:
 				jump_name = "air_jump"
 			
-			pressed_jump.emit(jump_states[jump_name])
+			jump(jump_states[jump_name])
 			air_jump_counter += 1
 						#
 		#if is_stance_blocked("upright"):

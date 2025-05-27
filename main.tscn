@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://dxo8m8y6lnqo1"]
+[gd_scene load_steps=93 format=3 uid="uid://dxo8m8y6lnqo1"]
 
 [ext_resource type="Material" uid="uid://clytu0rh8kfc7" path="res://Materials/grass.tres" id="1_lquwl"]
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="3_h2yge"]
@@ -181,6 +181,12 @@ albedo_color = Color(0.889595, 0.586096, 0.930473, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c2n8d"]
 albedo_color = Color(0.985139, 0.593584, 0.970344, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wy5fy"]
+albedo_color = Color(0.735945, 0.606586, 0.427306, 1)
+metallic = 0.4
+metallic_specular = 0.3
+roughness = 0.0
+
 [node name="Main" type="Node3D"]
 
 [node name="Map" type="Node" parent="."]
@@ -257,5 +263,10 @@ ears_material = SubResource("StandardMaterial3D_c2n8d")
 
 [node name="Player" parent="." instance=ExtResource("75_c2n8d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 8.3, -9.5)
+
+[node name="Character2" parent="." instance=ExtResource("80_birbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7, -0.1, -8.3)
+animation = "Dancing2"
+skin_material = SubResource("StandardMaterial3D_wy5fy")
 
 [editable path="GodotSky"]

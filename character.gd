@@ -16,7 +16,7 @@ extends CharacterBody3D
 var animation: String = "Idle":
 	set(value):
 		animation = value
-		if Engine.is_editor_hint() and animation_player.has_animation(value):
+		if Engine.is_editor_hint() and animation_player != null and animation_player.has_animation(value):
 			animation_player.play(animation)
 
 
@@ -29,7 +29,7 @@ var animation: String = "Idle":
 @export var skin_material: Material :
 	set(value):
 		skin_material = value
-		if Engine.is_editor_hint():
+		if Engine.is_editor_hint() and base_human != null:
 			_set_materials([0, 2, 5], value) # Replace with actual indices
 
 @export var skin_detail_material: Material :
@@ -51,6 +51,8 @@ var animation: String = "Idle":
 			_set_materials([4], value)
 
 func _set_materials(indices: Array[int], mat: Material) -> void:
+	if base_human == null:
+		return
 	for i in indices:
 		base_human.set_surface_override_material(i, mat)
 	#base_human.property_list_changed_notify()

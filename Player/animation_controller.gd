@@ -66,7 +66,3 @@ func _on_set_movement_state(_movement_state : MovementState):
 #func _on_set_stance(_stance : Stance):
 	#animation_tree["parameters/stance_transition/transition_request"] = _stance.name
 	#current_stance_name = _stance.name
-
-
-func _on_player_punch() -> void:
-	pass # Replace with function body.

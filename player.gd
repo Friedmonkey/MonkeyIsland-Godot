@@ -6,6 +6,7 @@ signal pressed_jump(jump_state : JumpState)
 signal changed_movement_state(_movement_state: MovementState)
 signal changed_movement_direction(_movement_direction: Vector3)
 
+@export var punch_sounds : Array
 @export var footstep_sounds : Dictionary
 @export var movement_states: Dictionary
 @export var max_air_jump : int = 1
@@ -32,7 +33,7 @@ func _input(event):
 	elif Input.is_action_just_released("aim"):
 		set_aiming(false)
 	if (is_aiming && event.is_action_pressed("punch")):
-		punch.emit()
+		do_punch()
 	elif event.is_action("movement"):
 		movement_direction.x = Input.get_action_strength("left") - Input.get_action_strength("right")
 		movement_direction.z = Input.get_action_strength("forward") - Input.get_action_strength("back")
@@ -50,6 +51,12 @@ func _input(event):
 		else:
 			set_movement_state("stand")
 	
+	
+func do_punch() -> void:
+	var sound = punch_sounds[randi() % punch_sounds.size()]
+	$PunchSound.stream = sound
+	$PunchSound.play()
+	punch.emit()
 	
 func set_aiming(aiming : bool):
 	is_aiming = aiming

@@ -10,4 +10,6 @@ acceleration = 6.0
 camera_fov = 78.0
 animation_speed = 0.95
 step_duration = 0.8
+punch_cooldown = 0.2
+punch_speed = 3.0
 metadata/_custom_type_script = "uid://bkvwsvus23kun"

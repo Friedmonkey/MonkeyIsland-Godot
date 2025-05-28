@@ -15,7 +15,7 @@ signal changed_movement_direction(_movement_direction: Vector3)
 #@export var Terrain: Node
 
 var punch_timer := 0.0
-var punch_interval := 0.3  # seconds between punches (adjust to taste)
+var punch_cooldown := 0.3  # seconds between punches (adjust to taste)
 
 var step_timer := 0.0
 var step_interval := 0.2  # seconds between steps (adjust to taste)
@@ -60,7 +60,7 @@ func do_punch() -> void:
 	if punch_timer >= 0.0:
 		return
 		
-	punch_timer = punch_interval
+	punch_timer = punch_cooldown
 	if !is_on_floor(): #if player jumps their itmer also kind of resets
 		return
 		
@@ -77,6 +77,7 @@ func set_movement_state(state : String):
 	current_movement_state_name = state
 	changed_movement_state.emit(movement_states[state])
 	step_interval = movement_states[state].step_duration
+	punch_cooldown = movement_states[state].punch_cooldown
 	
 func is_movement_ongoing() -> bool:
 	return abs(movement_direction.x) > 0 or abs(movement_direction.z) > 0

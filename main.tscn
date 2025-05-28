@@ -1,24 +1,19 @@
-[gd_scene load_steps=102 format=3 uid="uid://dxo8m8y6lnqo1"]
+[gd_scene load_steps=104 format=3 uid="uid://dxo8m8y6lnqo1"]
 
 [ext_resource type="Material" uid="uid://clytu0rh8kfc7" path="res://Materials/grass.tres" id="1_lquwl"]
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="3_h2yge"]
 [ext_resource type="Resource" uid="uid://2me8f2wpbj5h" path="res://Models/Terrain/texture_set.tres" id="4_4c57u"]
-[ext_resource type="Texture2D" uid="uid://budsvcva77tpb" path="res://Models/Terrain/Heightmap_0_0.res" id="5_efxa6"]
 [ext_resource type="Texture2D" uid="uid://b0ky5ndko5o5k" path="res://Models/TerrainAssets/Foliage/sprite_0001.png" id="5_vivmo"]
 [ext_resource type="Script" uid="uid://dgf8vwa2n8r11" path="res://addons/terrabrush/Scripts/EditorResources/FoliageDefinitionResource.cs" id="6_2cqfq"]
-[ext_resource type="Texture2D" uid="uid://cker64uq4nv5" path="res://Models/Terrain/Splatmap_0_0_0.res" id="6_dg77c"]
 [ext_resource type="Script" uid="uid://d33x21vao7tj2" path="res://addons/terrabrush/Scripts/EditorResources/FoliageResource.cs" id="7_yaehf"]
 [ext_resource type="Script" uid="uid://d2qebwt0ednya" path="res://addons/terrabrush/Scripts/EditorResources/ZoneResource.cs" id="7_ycdy4"]
-[ext_resource type="Texture2D" uid="uid://ctnlu3wsfeubt" path="res://Models/Terrain/Foliage_0_0_0.res" id="8_074og"]
 [ext_resource type="Texture2D" uid="uid://dsnnugjc0x3vs" path="res://Materials/Snow/Snow010A_1K-PNG_NormalDX.png" id="8_d13ii"]
 [ext_resource type="PackedScene" uid="uid://p5cqa12ban31" path="res://Models/TerrainAssets/Trees/tree_default.glb" id="9_phcyf"]
 [ext_resource type="Script" uid="uid://nt172hqpx1j5" path="res://addons/terrabrush/Scripts/EditorResources/ZonesResource.cs" id="10_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://cqp72glniacfl" path="res://Models/TerrainAssets/Trees/tree_default_dark.glb" id="10_birbe"]
 [ext_resource type="PackedScene" uid="uid://qu5mu4etqgmd" path="res://Models/TerrainAssets/Trees/tree_default_fall.glb" id="11_f1p13"]
-[ext_resource type="Texture2D" uid="uid://misvcgktcqvl" path="res://Models/Terrain/Snow_0_0.res" id="11_getpj"]
 [ext_resource type="PackedScene" uid="uid://dusbcrvapks5c" path="res://Models/TerrainAssets/Trees/tree_detailed.glb" id="12_4obbf"]
 [ext_resource type="PackedScene" uid="uid://5qdoolfsy2mf" path="res://Models/TerrainAssets/Trees/tree_detailed_dark.glb" id="13_ovcoh"]
-[ext_resource type="Texture2D" uid="uid://dvsk6v2pesmk" path="res://Models/Terrain/Water_0_0.res" id="13_ryguw"]
 [ext_resource type="PackedScene" uid="uid://dxdqedve8g4u5" path="res://Models/TerrainAssets/Trees/tree_detailed_fall.glb" id="14_ppx11"]
 [ext_resource type="PackedScene" uid="uid://bmiambs24khsi" path="res://Models/TerrainAssets/Trees/tree_fat.glb" id="15_1yv1y"]
 [ext_resource type="PackedScene" uid="uid://co6libpnhsl1b" path="res://Models/TerrainAssets/Trees/tree_fat_darkh.glb" id="16_5yh34"]
@@ -69,13 +64,18 @@
 [ext_resource type="Resource" uid="uid://c5ppflsj03c1w" path="res://Models/TerrainAssets/DefaultWater.tres" id="60_kkkcx"]
 [ext_resource type="Texture2D" uid="uid://ucsjdaqa1vaw" path="res://Materials/Snow/Snow010A_1K-PNG_Displacement.png" id="65_wy5fy"]
 [ext_resource type="Texture2D" uid="uid://c8qdmv4cguju8" path="res://Materials/Snow/Snow010A_1K-PNG_Roughness.png" id="66_gx4rg"]
-[ext_resource type="Texture2D" uid="uid://b7bysxj7c5rpt" path="res://Models/Terrain/Object_0_0_0.res" id="67_5aa3q"]
 [ext_resource type="Texture2D" uid="uid://bgfsjxao36an4" path="res://Materials/Snow/Snow010A_1K-PNG_Color.png" id="67_5dllo"]
 [ext_resource type="Script" uid="uid://di03satw2avie" path="res://addons/terrabrush/Scripts/EditorResources/SnowResource.cs" id="68_phcyf"]
+[ext_resource type="Texture2D" uid="uid://bm4qmwhsn0tp0" path="res://Models/Terrain/Foliage_1_0_0.res" id="72_yysqy"]
+[ext_resource type="Texture2D" uid="uid://df2qubx52irx3" path="res://Models/Terrain/Heightmap_1_0.res" id="73_n5t1e"]
 [ext_resource type="PackedScene" uid="uid://1gfropwtqfbn" path="res://GodotSky/GodotSky.tscn" id="74_34ol3"]
+[ext_resource type="Texture2D" uid="uid://01sv5w1p8cjt" path="res://Models/Terrain/Object_1_0_0.res" id="74_h6isl"]
+[ext_resource type="Texture2D" uid="uid://7u8180vnvymu" path="res://Models/Terrain/Snow_1_0.res" id="75_53bls"]
 [ext_resource type="PackedScene" uid="uid://drenu2srr1q61" path="res://Character/player.tscn" id="75_c2n8d"]
 [ext_resource type="Script" uid="uid://dq81uc0huxowy" path="res://background_music.gd" id="76_gx4rg"]
+[ext_resource type="Texture2D" uid="uid://dfpjk4hu57twn" path="res://Models/Terrain/Splatmap_1_0_0.res" id="76_lwnsi"]
 [ext_resource type="AudioStream" uid="uid://bfrs8tdxbmve0" path="res://Music/08 Global Forecast (Daytime).mp3" id="76_wy5fy"]
+[ext_resource type="Texture2D" uid="uid://wa8qsytfmx0e" path="res://Models/Terrain/Water_1_0.res" id="77_41lik"]
 [ext_resource type="AudioStream" uid="uid://bkkugqwinyy6f" path="res://Music/04 Local Forecast (Daytime).mp3" id="77_ppx11"]
 [ext_resource type="AudioStream" uid="uid://de26ipi8v5d4k" path="res://Music/05 Local Forecast (Nighttime).mp3" id="78_1yv1y"]
 [ext_resource type="AudioStream" uid="uid://bfu7n3ctesyo7" path="res://Music/06 Regional Forecast (Daytime).mp3" id="79_5yh34"]
@@ -159,19 +159,19 @@ Metallic = 0.0
 VisualInstanceLayers = 1
 metadata/_custom_type_script = "uid://di03satw2avie"
 
-[sub_resource type="Resource" id="Resource_f1p13"]
+[sub_resource type="Resource" id="Resource_jbvwl"]
 script = ExtResource("7_ycdy4")
-ZonePosition = Vector2i(0, 0)
-HeightMapTexture = ExtResource("5_efxa6")
-SplatmapsTexture = [ExtResource("6_dg77c")]
-FoliagesTexture = [ExtResource("8_074og")]
-ObjectsTexture = [ExtResource("67_5aa3q")]
-WaterTexture = ExtResource("13_ryguw")
-SnowTexture = ExtResource("11_getpj")
+ZonePosition = Vector2i(1, 0)
+HeightMapTexture = ExtResource("73_n5t1e")
+SplatmapsTexture = [ExtResource("76_lwnsi")]
+FoliagesTexture = [ExtResource("72_yysqy")]
+ObjectsTexture = [ExtResource("74_h6isl")]
+WaterTexture = ExtResource("77_41lik")
+SnowTexture = ExtResource("75_53bls")
 
 [sub_resource type="Resource" id="Resource_4obbf"]
 script = ExtResource("10_2cqfq")
-Zones = [SubResource("Resource_f1p13")]
+Zones = [SubResource("Resource_jbvwl")]
 
 [sub_resource type="QuadMesh" id="QuadMesh_34ol3"]
 
@@ -196,6 +196,17 @@ metallic = 0.4
 metallic_specular = 0.3
 roughness = 0.0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yysqy"]
+albedo_color = Color(0.288518, 0.288518, 0.288518, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n5t1e"]
+albedo_color = Color(0.886275, 0.0470588, 0, 1)
+emission_enabled = true
+emission = Color(0.886275, 0.0470588, 0, 1)
+emission_energy_multiplier = 2.62
+subsurf_scatter_strength = 1.0
+backlight = Color(0.886275, 0.0470588, 0, 1)
+
 [node name="Main" type="Node3D"]
 
 [node name="Map" type="Node" parent="."]
@@ -213,7 +224,7 @@ operation = 2
 radius = 1.7
 
 [node name="HutBox" type="CSGBox3D" parent="Map"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6, 1.85, -7.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 215.1, -7.05, -5.5)
 use_collision = true
 size = Vector3(4.2, 3.7, 4.3)
 
@@ -228,7 +239,7 @@ operation = 2
 size = Vector3(1, 3.8, 1.4)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Map"]
-transform = Transform3D(-0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, -0.984808, 0, 6.8, -9.5)
+transform = Transform3D(-0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, -0.984808, 287.2, 6.8, -9.5)
 use_collision = true
 size = Vector3(10, 2, 4)
 
@@ -258,20 +269,19 @@ light_specular = 5.0
 light_specular = 5.0
 
 [node name="OceanWater" type="MeshInstance3D" parent="."]
-transform = Transform3D(653.184, 0, 0, 0, -1.69258e-05, 141.12, 0, -567.936, -3.43323e-06, 0, -2.1, 0)
+transform = Transform3D(1175.73, 0, 0, 0, -4.56997e-05, 141.12, 0, -1533.43, -3.43323e-06, 0, -9.1, -227.9)
 mesh = SubResource("QuadMesh_34ol3")
 surface_material_override/0 = SubResource("StandardMaterial3D_34ol3")
 
 [node name="Character" parent="." instance=ExtResource("80_birbe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, 0, -8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.8, -1.3, -8)
 skin_material = SubResource("StandardMaterial3D_birbe")
 skin_detail_material = SubResource("StandardMaterial3D_f1p13")
 face_material = SubResource("StandardMaterial3D_4obbf")
 ears_material = SubResource("StandardMaterial3D_c2n8d")
-max_health = 100
 
 [node name="Player" parent="." instance=ExtResource("75_c2n8d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 8.3, -9.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 288, 8.3, -9)
 
 [node name="BackgroundMusic" type="Node" parent="."]
 script = ExtResource("76_gx4rg")
@@ -284,6 +294,10 @@ bus = &"Music"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4, -0.0999997, -9.9)
 animation = "Dancing2"
 skin_material = SubResource("StandardMaterial3D_wy5fy")
-max_health = 100
+
+[node name="Character3" parent="." instance=ExtResource("80_birbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 248.8, -4.9, -10.8)
+skin_material = SubResource("StandardMaterial3D_yysqy")
+face_material = SubResource("StandardMaterial3D_n5t1e")
 
 [editable path="GodotSky"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dp6yjmufb0gvl"
+path="res://.godot/imported/11 Global Forecast (Nighttime - Layer Only).mp3-73613d38967d0e5a00ca166cc756a74a.mp3str"
+
+[deps]
+
+source_file="res://Music/11 Global Forecast (Nighttime - Layer Only).mp3"
+dest_files=["res://.godot/imported/11 Global Forecast (Nighttime - Layer Only).mp3-73613d38967d0e5a00ca166cc756a74a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

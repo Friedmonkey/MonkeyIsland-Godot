@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bfrs8tdxbmve0"
+path="res://.godot/imported/08 Global Forecast (Daytime).mp3-1b766277e2e58a44e846bd3738ca0b8b.mp3str"
+
+[deps]
+
+source_file="res://Music/08 Global Forecast (Daytime).mp3"
+dest_files=["res://.godot/imported/08 Global Forecast (Daytime).mp3-1b766277e2e58a44e846bd3738ca0b8b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

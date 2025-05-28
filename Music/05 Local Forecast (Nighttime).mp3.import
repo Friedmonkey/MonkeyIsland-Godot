@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://de26ipi8v5d4k"
+path="res://.godot/imported/05 Local Forecast (Nighttime).mp3-3f69bedde7ca634502b9131ab772162d.mp3str"
+
+[deps]
+
+source_file="res://Music/05 Local Forecast (Nighttime).mp3"
+dest_files=["res://.godot/imported/05 Local Forecast (Nighttime).mp3-3f69bedde7ca634502b9131ab772162d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

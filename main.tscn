@@ -169,11 +169,11 @@ Definition = SubResource("Resource_shlp4")
 Hide = false
 metadata/_custom_type_script = "uid://comabiqrwe5u0"
 
-[sub_resource type="Resource" id="Resource_ppx11"]
+[sub_resource type="Resource" id="Resource_inymm"]
 script = ExtResource("59_7mmqq")
 Strategy = 1
-ObjectFrequency = -1
-RandomRange = 1.0
+ObjectFrequency = 8
+RandomRange = 3.0
 RandomYRotation = false
 RandomSize = false
 RandomSizeFactorMin = 0.2
@@ -186,9 +186,9 @@ UpdateTimeFrequency = 0.1
 VisualInstanceLayers = 1
 metadata/_custom_type_script = "uid://cgf61yxk46wa4"
 
-[sub_resource type="Resource" id="Resource_1yv1y"]
+[sub_resource type="Resource" id="Resource_jcxqu"]
 script = ExtResource("60_3exxq")
-Definition = SubResource("Resource_ppx11")
+Definition = SubResource("Resource_inymm")
 Hide = false
 metadata/_custom_type_script = "uid://comabiqrwe5u0"
 
@@ -337,7 +337,7 @@ script = ExtResource("3_h2yge")
 DataPath = "res://Models/Terrain"
 TextureSets = ExtResource("4_4c57u")
 Foliages = [SubResource("Resource_a6jrf")]
-Objects = [SubResource("Resource_2n44k"), SubResource("Resource_1yv1y")]
+Objects = [SubResource("Resource_2n44k"), SubResource("Resource_jcxqu")]
 WaterDefinition = ExtResource("60_kkkcx")
 SnowDefinition = SubResource("Resource_birbe")
 TerrainZones = SubResource("Resource_4obbf")
@@ -363,9 +363,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_34ol3")
 
 [node name="Player" parent="." node_paths=PackedStringArray("sea_level") instance=ExtResource("75_c2n8d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 10, -15)
-max_air_jump = 1
 sea_level = NodePath("../OceanWater")
-max_health = 100
 
 [node name="BackgroundMusic" type="Node" parent="."]
 script = ExtResource("76_gx4rg")

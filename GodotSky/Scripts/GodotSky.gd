@@ -197,6 +197,8 @@ func updateSky():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_temp_for_day()
+	self.environment.volumetric_fog_enabled = true
+	self.environment.volumetric_fog_length = 35
 	#await get_tree().create_timer(3).timeout
 	#self.environment.sdfgi_enabled = false
 	#await get_tree().create_timer(3).timeout

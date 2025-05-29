@@ -12,6 +12,7 @@ signal changed_movement_direction(_movement_direction: Vector3)
 @export var movement_states: Dictionary
 @export var max_air_jump : int = 1
 @export var jump_states : Dictionary
+@export var sea_level : Node3D
 #@export var Terrain: Node
 
 var punch_timer := 0.0
@@ -131,6 +132,8 @@ func jump(jump_state : JumpState) -> void:
 	$JumpSound.play()
 
 func _physics_process(delta: float) -> void:
+	if position.y+1 < sea_level.position.y:
+		position = Vector3(10,10,-15) #respawn the player
 	if (punch_timer >= 0):
 		punch_timer -= delta
 	if is_movement_ongoing():

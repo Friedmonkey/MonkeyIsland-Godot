@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://dxo8m8y6lnqo1"]
+[gd_scene load_steps=127 format=3 uid="uid://dxo8m8y6lnqo1"]
 
 [ext_resource type="Material" uid="uid://clytu0rh8kfc7" path="res://Materials/grass.tres" id="1_lquwl"]
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="3_h2yge"]
@@ -60,13 +60,28 @@
 [ext_resource type="PackedScene" uid="uid://bifa7tnwgrat4" path="res://Models/TerrainAssets/Trees/tree_small_fall.glb" id="57_g5xqc"]
 [ext_resource type="PackedScene" uid="uid://rrg06kduq14x" path="res://Models/TerrainAssets/Trees/tree_tall.glb" id="58_s4o1y"]
 [ext_resource type="Script" uid="uid://cgf61yxk46wa4" path="res://addons/terrabrush/Scripts/EditorResources/ObjectDefinitionResource.cs" id="59_7mmqq"]
+[ext_resource type="PackedScene" uid="uid://b8kq7xm55yydu" path="res://Models/TerrainAssets/Survival/resource-planks.glb" id="59_vieuh"]
 [ext_resource type="Script" uid="uid://comabiqrwe5u0" path="res://addons/terrabrush/Scripts/EditorResources/ObjectResource.cs" id="60_3exxq"]
 [ext_resource type="Resource" uid="uid://c5ppflsj03c1w" path="res://Models/TerrainAssets/DefaultWater.tres" id="60_kkkcx"]
+[ext_resource type="PackedScene" uid="uid://cnppxl1osqfis" path="res://Models/TerrainAssets/Survival/resource-stone-large.glb" id="60_yjja3"]
+[ext_resource type="PackedScene" uid="uid://sxeeomnqcev0" path="res://Models/TerrainAssets/Survival/resource-stone.glb" id="61_l0gw7"]
+[ext_resource type="PackedScene" uid="uid://dil1rurucgosj" path="res://Models/TerrainAssets/Survival/resource-wood.glb" id="62_inymm"]
+[ext_resource type="PackedScene" uid="uid://dla7b0wgwiw4o" path="res://Models/TerrainAssets/Survival/rock-a.glb" id="63_jcxqu"]
+[ext_resource type="PackedScene" uid="uid://bdaltpb0abett" path="res://Models/TerrainAssets/Survival/rock-b.glb" id="64_0arob"]
+[ext_resource type="PackedScene" uid="uid://dfhv6kiwokrnh" path="res://Models/TerrainAssets/Survival/rock-c.glb" id="65_dij0e"]
 [ext_resource type="Texture2D" uid="uid://ucsjdaqa1vaw" path="res://Materials/Snow/Snow010A_1K-PNG_Displacement.png" id="65_wy5fy"]
 [ext_resource type="Texture2D" uid="uid://c8qdmv4cguju8" path="res://Materials/Snow/Snow010A_1K-PNG_Roughness.png" id="66_gx4rg"]
+[ext_resource type="PackedScene" uid="uid://l12fpfnbpxmj" path="res://Models/TerrainAssets/Survival/rock-flat.glb" id="66_k1udn"]
 [ext_resource type="Texture2D" uid="uid://bgfsjxao36an4" path="res://Materials/Snow/Snow010A_1K-PNG_Color.png" id="67_5dllo"]
+[ext_resource type="PackedScene" uid="uid://dy83rexmk3gjt" path="res://Models/TerrainAssets/Survival/rock-sand-a.glb" id="67_wat4s"]
 [ext_resource type="Script" uid="uid://di03satw2avie" path="res://addons/terrabrush/Scripts/EditorResources/SnowResource.cs" id="68_phcyf"]
+[ext_resource type="PackedScene" uid="uid://bwi7f3pnxqfeq" path="res://Models/TerrainAssets/Survival/rock-sand-b.glb" id="68_ywjan"]
+[ext_resource type="PackedScene" uid="uid://b0m7ui5q1j311" path="res://Models/TerrainAssets/Survival/rock-sand-c.glb" id="69_m74q3"]
+[ext_resource type="PackedScene" uid="uid://d2x55nlk3s3yw" path="res://Models/TerrainAssets/Survival/tree-autumn-trunk.glb" id="70_tko6h"]
+[ext_resource type="PackedScene" uid="uid://vvor0exw5d1q" path="res://Models/TerrainAssets/Survival/tree-log-small.glb" id="71_am8a1"]
+[ext_resource type="PackedScene" uid="uid://b6qh41667s5ak" path="res://Models/TerrainAssets/Survival/tree-log.glb" id="72_8dc3g"]
 [ext_resource type="Texture2D" uid="uid://bm4qmwhsn0tp0" path="res://Models/Terrain/Foliage_1_0_0.res" id="72_yysqy"]
+[ext_resource type="PackedScene" uid="uid://cw4q1qwefsj6m" path="res://Models/TerrainAssets/Survival/tree-trunk.glb" id="73_htgcl"]
 [ext_resource type="Texture2D" uid="uid://df2qubx52irx3" path="res://Models/Terrain/Heightmap_1_0.res" id="73_n5t1e"]
 [ext_resource type="PackedScene" uid="uid://1gfropwtqfbn" path="res://GodotSky/GodotSky.tscn" id="74_34ol3"]
 [ext_resource type="Texture2D" uid="uid://01sv5w1p8cjt" path="res://Models/Terrain/Object_1_0_0.res" id="74_h6isl"]
@@ -83,7 +98,16 @@
 [ext_resource type="AudioStream" uid="uid://28taggi22onf" path="res://Music/07 Regional Forecast (Nighttime).mp3" id="80_pjuso"]
 [ext_resource type="AudioStream" uid="uid://bbcjfhgxgb82p" path="res://Music/09 Global Forecast (Nighttime).mp3" id="82_23xmf"]
 [ext_resource type="AudioStream" uid="uid://boqiltym62qnf" path="res://Music/10 Global Forecast (Daytime - Layer Only).mp3" id="83_swlj1"]
+[ext_resource type="Texture2D" uid="uid://box5jsl7kgd3c" path="res://Models/Terrain/Object_1_0_1.res" id="83_yjja3"]
 [ext_resource type="AudioStream" uid="uid://dp6yjmufb0gvl" path="res://Music/11 Global Forecast (Nighttime - Layer Only).mp3" id="84_yysqy"]
+[ext_resource type="PackedScene" uid="uid://qjqve05lgky6" path="res://Models/TerrainAssets/Pirate/structure-platform-dock.glb" id="101_inymm"]
+[ext_resource type="PackedScene" uid="uid://nmpf6ltddfb3" path="res://Models/TerrainAssets/Pirate/structure-platform.glb" id="102_jcxqu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_inymm"]
+size = Vector3(2.4, 0.6, 12.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jcxqu"]
+size = Vector3(0.4, 0.4, 0.4)
 
 [sub_resource type="QuadMesh" id="QuadMesh_0odxb"]
 center_offset = Vector3(0, 0.5, 0)
@@ -145,6 +169,29 @@ Definition = SubResource("Resource_shlp4")
 Hide = false
 metadata/_custom_type_script = "uid://comabiqrwe5u0"
 
+[sub_resource type="Resource" id="Resource_ppx11"]
+script = ExtResource("59_7mmqq")
+Strategy = 1
+ObjectFrequency = -1
+RandomRange = 1.0
+RandomYRotation = false
+RandomSize = false
+RandomSizeFactorMin = 0.2
+RandomSizeFactorMax = 1.2
+ObjectScenes = [ExtResource("59_vieuh"), ExtResource("60_yjja3"), ExtResource("61_l0gw7"), ExtResource("62_inymm"), ExtResource("63_jcxqu"), ExtResource("64_0arob"), ExtResource("65_dij0e"), ExtResource("66_k1udn"), ExtResource("67_wat4s"), ExtResource("68_ywjan"), ExtResource("69_m74q3"), ExtResource("70_tko6h"), ExtResource("71_am8a1"), ExtResource("72_8dc3g"), ExtResource("73_htgcl")]
+LODList = null
+LODMeshes = null
+UpdateDistanceThreshold = 1.0
+UpdateTimeFrequency = 0.1
+VisualInstanceLayers = 1
+metadata/_custom_type_script = "uid://cgf61yxk46wa4"
+
+[sub_resource type="Resource" id="Resource_1yv1y"]
+script = ExtResource("60_3exxq")
+Definition = SubResource("Resource_ppx11")
+Hide = false
+metadata/_custom_type_script = "uid://comabiqrwe5u0"
+
 [sub_resource type="Resource" id="Resource_birbe"]
 script = ExtResource("68_phcyf")
 SnowFactor = 1.0
@@ -161,11 +208,11 @@ metadata/_custom_type_script = "uid://di03satw2avie"
 
 [sub_resource type="Resource" id="Resource_jbvwl"]
 script = ExtResource("7_ycdy4")
-ZonePosition = Vector2i(1, 0)
+ZonePosition = Vector2i(0, 0)
 HeightMapTexture = ExtResource("73_n5t1e")
 SplatmapsTexture = [ExtResource("76_lwnsi")]
 FoliagesTexture = [ExtResource("72_yysqy")]
-ObjectsTexture = [ExtResource("74_h6isl")]
+ObjectsTexture = [ExtResource("74_h6isl"), ExtResource("83_yjja3")]
 WaterTexture = ExtResource("77_41lik")
 SnowTexture = ExtResource("75_53bls")
 
@@ -207,6 +254,9 @@ emission_energy_multiplier = 2.62
 subsurf_scatter_strength = 1.0
 backlight = Color(0.886275, 0.0470588, 0, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_inymm"]
+albedo_color = Color(0.863271, 0.509367, 0.329184, 1)
+
 [node name="Main" type="Node3D"]
 
 [node name="Map" type="Node" parent="."]
@@ -224,7 +274,7 @@ operation = 2
 radius = 1.7
 
 [node name="HutBox" type="CSGBox3D" parent="Map"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 215.1, -7.05, -5.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.7, -7.05, -5.5)
 use_collision = true
 size = Vector3(4.2, 3.7, 4.3)
 
@@ -239,9 +289,47 @@ operation = 2
 size = Vector3(1, 3.8, 1.4)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Map"]
-transform = Transform3D(-0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, -0.984808, 287.2, 6.8, -9.5)
+transform = Transform3D(-0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, -0.984808, 1.00002, 11.2, -9.5)
 use_collision = true
 size = Vector3(10, 2, 4)
+
+[node name="Dock" type="StaticBody3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.4, -9.8, 8.4)
+
+[node name="structure-platform-dock2" parent="Map/Dock" instance=ExtResource("101_inymm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.9)
+
+[node name="structure-platform2" parent="Map/Dock" instance=ExtResource("102_jcxqu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.899999)
+
+[node name="structure-platform3" parent="Map/Dock" instance=ExtResource("102_jcxqu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.4)
+
+[node name="structure-platform4" parent="Map/Dock" instance=ExtResource("102_jcxqu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.9)
+
+[node name="structure-platform5" parent="Map/Dock" instance=ExtResource("102_jcxqu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.4)
+
+[node name="DockCollision" type="CollisionShape3D" parent="Map/Dock"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 5.95)
+shape = SubResource("BoxShape3D_inymm")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Map/Dock"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.1, 11.9)
+shape = SubResource("BoxShape3D_jcxqu")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Map/Dock"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.1, 11.9)
+shape = SubResource("BoxShape3D_jcxqu")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Map/Dock"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.1, 9.9)
+shape = SubResource("BoxShape3D_jcxqu")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Map/Dock"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.1, 9.9)
+shape = SubResource("BoxShape3D_jcxqu")
 
 [node name="TerraTerrain" type="Node3D" parent="."]
 unique_name_in_owner = true
@@ -249,7 +337,7 @@ script = ExtResource("3_h2yge")
 DataPath = "res://Models/Terrain"
 TextureSets = ExtResource("4_4c57u")
 Foliages = [SubResource("Resource_a6jrf")]
-Objects = [SubResource("Resource_2n44k")]
+Objects = [SubResource("Resource_2n44k"), SubResource("Resource_1yv1y")]
 WaterDefinition = ExtResource("60_kkkcx")
 SnowDefinition = SubResource("Resource_birbe")
 TerrainZones = SubResource("Resource_4obbf")
@@ -273,15 +361,11 @@ transform = Transform3D(1175.73, 0, 0, 0, -4.56997e-05, 141.12, 0, -1533.43, -3.
 mesh = SubResource("QuadMesh_34ol3")
 surface_material_override/0 = SubResource("StandardMaterial3D_34ol3")
 
-[node name="Character" parent="." instance=ExtResource("80_birbe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.8, -1.3, -8)
-skin_material = SubResource("StandardMaterial3D_birbe")
-skin_detail_material = SubResource("StandardMaterial3D_f1p13")
-face_material = SubResource("StandardMaterial3D_4obbf")
-ears_material = SubResource("StandardMaterial3D_c2n8d")
-
-[node name="Player" parent="." instance=ExtResource("75_c2n8d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 288, 8.3, -9)
+[node name="Player" parent="." node_paths=PackedStringArray("sea_level") instance=ExtResource("75_c2n8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 10, -15)
+max_air_jump = 1
+sea_level = NodePath("../OceanWater")
+max_health = 100
 
 [node name="BackgroundMusic" type="Node" parent="."]
 script = ExtResource("76_gx4rg")
@@ -290,14 +374,29 @@ tracks = Array[AudioStream]([ExtResource("77_ppx11"), ExtResource("78_1yv1y"), E
 [node name="Music" type="AudioStreamPlayer" parent="BackgroundMusic"]
 bus = &"Music"
 
-[node name="Character2" parent="." instance=ExtResource("80_birbe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4, -0.0999997, -9.9)
+[node name="Npcs" type="Node" parent="."]
+
+[node name="Character" parent="Npcs" instance=ExtResource("80_birbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.8, 20.7, -8)
+skin_material = SubResource("StandardMaterial3D_birbe")
+skin_detail_material = SubResource("StandardMaterial3D_f1p13")
+face_material = SubResource("StandardMaterial3D_4obbf")
+ears_material = SubResource("StandardMaterial3D_c2n8d")
+
+[node name="Character2" parent="Npcs" instance=ExtResource("80_birbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4, 21.9, -9.9)
 animation = "Dancing2"
 skin_material = SubResource("StandardMaterial3D_wy5fy")
 
-[node name="Character3" parent="." instance=ExtResource("80_birbe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 248.8, -4.9, -10.8)
+[node name="EvilMonkey" parent="Npcs" instance=ExtResource("80_birbe")]
+transform = Transform3D(-0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, -0.984808, -8.3, -7.2, 28.2)
+animation = "Man_Run"
 skin_material = SubResource("StandardMaterial3D_yysqy")
 face_material = SubResource("StandardMaterial3D_n5t1e")
+
+[node name="DockMonkey" parent="Npcs" instance=ExtResource("80_birbe")]
+transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -35, -8.9, 19.6)
+animation = "Armature|mixamo_com|Layer0"
+skin_material = SubResource("StandardMaterial3D_inymm")
 
 [editable path="GodotSky"]

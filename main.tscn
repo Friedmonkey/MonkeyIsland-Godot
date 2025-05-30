@@ -1,4 +1,4 @@
-[gd_scene load_steps=139 format=3 uid="uid://dxo8m8y6lnqo1"]
+[gd_scene load_steps=142 format=3 uid="uid://dxo8m8y6lnqo1"]
 
 [ext_resource type="Material" uid="uid://clytu0rh8kfc7" path="res://Materials/grass.tres" id="1_lquwl"]
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="3_h2yge"]
@@ -103,10 +103,12 @@
 [ext_resource type="PackedScene" uid="uid://qjqve05lgky6" path="res://Models/TerrainAssets/Pirate/structure-platform-dock.glb" id="101_inymm"]
 [ext_resource type="PackedScene" uid="uid://nmpf6ltddfb3" path="res://Models/TerrainAssets/Pirate/structure-platform.glb" id="102_jcxqu"]
 [ext_resource type="AudioStream" uid="uid://cw4rku1gm358l" path="res://Models/MetaAssets/ocean-waves.mp3" id="102_m74q3"]
+[ext_resource type="AudioStream" uid="uid://b4x6h1b5yxrl0" path="res://Models/MetaAssets/grass.mp3" id="103_am8a1"]
 [ext_resource type="Texture2D" uid="uid://dcbl5i0d8c2hq" path="res://Models/MetaAssets/Black.png" id="104_m74q3"]
 [ext_resource type="Script" uid="uid://c2l8t4xcdxwvu" path="res://addons/terrabrush/Scripts/EditorResources/TextureSetResource.cs" id="105_tko6h"]
 [ext_resource type="Script" uid="uid://043vjblb04jf" path="res://addons/terrabrush/Scripts/EditorResources/TextureSetsResource.cs" id="106_am8a1"]
 [ext_resource type="Texture2D" uid="uid://cwhkitjkxlewj" path="res://Models/MetaAssets/water.jpg" id="106_m74q3"]
+[ext_resource type="Texture2D" uid="uid://b4j3fhv8euxxo" path="res://Models/MetaAssets/grass.png" id="107_tko6h"]
 [ext_resource type="Texture2D" uid="uid://b6jf7ijv4inkn" path="res://Models/TerrainMeta/Splatmap_0_0_0.res" id="108_8dc3g"]
 [ext_resource type="Texture2D" uid="uid://b1mn7v4vs8xlo" path="res://Models/TerrainMeta/Heightmap_1_0_meta.res" id="108_tko6h"]
 
@@ -280,9 +282,17 @@ TextureDetail = -1
 Triplanar = false
 metadata/_custom_type_script = "uid://c2l8t4xcdxwvu"
 
+[sub_resource type="Resource" id="Resource_8dc3g"]
+script = ExtResource("105_tko6h")
+Name = "Grass"
+AlbedoTexture = ExtResource("107_tko6h")
+TextureDetail = -1
+Triplanar = false
+metadata/_custom_type_script = "uid://c2l8t4xcdxwvu"
+
 [sub_resource type="Resource" id="Resource_f3y11"]
 script = ExtResource("106_am8a1")
-TextureSets = [SubResource("Resource_smeu8"), SubResource("Resource_am8a1")]
+TextureSets = [SubResource("Resource_smeu8"), SubResource("Resource_am8a1"), SubResource("Resource_8dc3g")]
 metadata/_custom_type_script = "uid://043vjblb04jf"
 
 [sub_resource type="Resource" id="Resource_0arob"]
@@ -415,6 +425,12 @@ bus = &"Music"
 
 [node name="Waves" type="AudioStreamPlayer" parent="BackgroundMusic"]
 stream = ExtResource("102_m74q3")
+autoplay = true
+bus = &"Ambiance"
+parameters/looping = true
+
+[node name="Grass" type="AudioStreamPlayer" parent="BackgroundMusic"]
+stream = ExtResource("103_am8a1")
 autoplay = true
 bus = &"Ambiance"
 parameters/looping = true

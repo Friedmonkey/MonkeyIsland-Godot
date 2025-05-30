@@ -52,12 +52,12 @@ func handle_terrain_meta(delta: float) -> void:
 	var water_factor = get_terrain_meta("Water")
 	waves_target_volume_db = volume_from_factor(water_factor)
 	waves_current_volume_db = lerp(waves_current_volume_db, waves_target_volume_db, delta * 5.0)
-	waves.volume_db = waves_current_volume_db
+	waves.volume_db = min(waves_current_volume_db, 10)
 	
 	var grass_factor = get_terrain_meta("Grass")
 	grass_target_volume_db = volume_from_factor(grass_factor)
 	grass_current_volume_db = lerp(grass_current_volume_db, grass_target_volume_db, delta * 5.0)
-	grass.volume_db = grass_current_volume_db
+	grass.volume_db = min(grass_current_volume_db, 15)
 	
 	# Smooth interpolation (tweak 5.0 to change speed)
 func get_terrain_meta(meta : String) -> float:

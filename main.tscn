@@ -101,9 +101,6 @@
 [ext_resource type="Texture2D" uid="uid://box5jsl7kgd3c" path="res://Models/Terrain/Object_1_0_1.res" id="83_yjja3"]
 [ext_resource type="AudioStream" uid="uid://dp6yjmufb0gvl" path="res://Music/11 Global Forecast (Nighttime - Layer Only).mp3" id="84_yysqy"]
 [ext_resource type="Material" uid="uid://bjv4od7gfbch0" path="res://Shaders/water.tres" id="92_8dc3g"]
-[ext_resource type="Texture2D" uid="uid://cyds7pm8thl5k" path="res://Materials/Rock/Rock058_1K-PNG_Color.png" id="93_f3y11"]
-[ext_resource type="Texture2D" uid="uid://cvfer1ixrvsad" path="res://Materials/Rock/Rock058_1K-PNG_NormalGL.png" id="94_cpm2s"]
-[ext_resource type="Texture2D" uid="uid://cjd2ur6e7ev5n" path="res://Materials/Rock/Rock058_1K-PNG_Roughness.png" id="95_u81y6"]
 [ext_resource type="PackedScene" uid="uid://qjqve05lgky6" path="res://Models/TerrainAssets/Pirate/structure-platform-dock.glb" id="101_inymm"]
 [ext_resource type="PackedScene" uid="uid://nmpf6ltddfb3" path="res://Models/TerrainAssets/Pirate/structure-platform.glb" id="102_jcxqu"]
 [ext_resource type="AudioStream" uid="uid://cw4rku1gm358l" path="res://Models/MetaAssets/ocean-waves.mp3" id="102_m74q3"]
@@ -234,16 +231,6 @@ script = ExtResource("10_2cqfq")
 Zones = [SubResource("Resource_jbvwl")]
 
 [sub_resource type="QuadMesh" id="QuadMesh_34ol3"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_rt5wr"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mnw77"]
-albedo_texture = ExtResource("93_f3y11")
-roughness_texture = ExtResource("95_u81y6")
-normal_enabled = true
-normal_texture = ExtResource("94_cpm2s")
-uv1_scale = Vector3(100, 100, 100)
-uv2_scale = Vector3(100, 100, 100)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_birbe"]
 albedo_color = Color(0.759071, 0.107256, 0.767531, 1)
@@ -424,8 +411,7 @@ surface_material_override/0 = ExtResource("92_8dc3g")
 
 [node name="OceanBottom" type="MeshInstance3D" parent="."]
 transform = Transform3D(800, 0, 0, 0, -3.49691e-05, 150, 0, -800, -6.55671e-06, 0, -43.7, 0)
-mesh = SubResource("QuadMesh_rt5wr")
-surface_material_override/0 = SubResource("StandardMaterial3D_mnw77")
+visible = false
 
 [node name="Player" parent="." node_paths=PackedStringArray("sea_level") instance=ExtResource("75_c2n8d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.1, 13, -10.4)

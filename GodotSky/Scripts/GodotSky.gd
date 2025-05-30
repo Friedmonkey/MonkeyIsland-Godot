@@ -35,7 +35,7 @@ var moonPosition : float = 0.0
 var sunPosAlpha : float = 0.0
 
 # temperature variables
-var cached_temperature = Global.CURRENT_TEMPERATURE_C
+#var cached_temperature = Global.CURRENT_TEMPERATURE_C
 
 
 # Check if simulating day/night cycle, determine rate of time, and increase time
@@ -44,42 +44,42 @@ func simulateDay(delta):
 		timeOfDay += rateOfTime * delta
 		if (timeOfDay >= 2400.0):
 			timeOfDay = 0.0
-			set_temp_for_day()
+			#set_temp_for_day()
 		Global.TIME_OF_DAY = snapped(timeOfDay, 0.01)
-		if Global.GLOBAL_TICK % 100 == 0:
-			update_temperature()
+		#if Global.GLOBAL_TICK % 100 == 0:
+			#update_temperature()
 		#Global.SUN_WARMTH_MULTIPLIER = clamp(((snapped(sunWarmthMultiplierCurve.sample(sunPosition), 0.01) + 1) - cloudCoverage), 1, 2)
 
-func update_temperature():
-	var time_ratio = timeOfDay / 2400.0
-	if time_ratio <= 0.5:
-		Global.CURRENT_TEMPERATURE_C = lerp(cached_temperature, Global.TEMPERATURE_HIGH_C, time_ratio * 2)
-	else:
-		Global.CURRENT_TEMPERATURE_C = lerp(Global.TEMPERATURE_HIGH_C, Global.TEMPERATURE_LOW_C, (time_ratio - 0.5) * 2)
+#func update_temperature():
+	#var time_ratio = timeOfDay / 2400.0
+	#if time_ratio <= 0.5:
+		#Global.CURRENT_TEMPERATURE_C = lerp(cached_temperature, Global.TEMPERATURE_HIGH_C, time_ratio * 2)
+	#else:
+		#Global.CURRENT_TEMPERATURE_C = lerp(Global.TEMPERATURE_HIGH_C, Global.TEMPERATURE_LOW_C, (time_ratio - 0.5) * 2)
 	
 
-func set_temp_for_day():
-	#if world._is_server_host:
-		var temperature_high
-		var temperature_low
-		
-		var temperature_max_increase = 15
-		
-		cached_temperature = Global.CURRENT_TEMPERATURE_C
-		
-		if cached_temperature + temperature_max_increase > Global.MAX_TEMPERATURE_C:
-			temperature_high = cached_temperature + randf_range(-3, 0)
-		elif cached_temperature - 3 < Global.MIN_TEMPERATURE:
-			temperature_high = cached_temperature + randf_range(0, temperature_max_increase)
-		else:
-			temperature_high = cached_temperature + randf_range(-3, temperature_max_increase)
-		
-		temperature_low = temperature_high - randf_range(1, 6)
-		
-		Global.TEMPERATURE_HIGH_C = temperature_high
-		Global.TEMPERATURE_LOW_C = temperature_low
-		
-		emit_signal("temperature_set")
+#func set_temp_for_day():
+	##if world._is_server_host:
+		#var temperature_high
+		#var temperature_low
+		#
+		#var temperature_max_increase = 15
+		#
+		#cached_temperature = Global.CURRENT_TEMPERATURE_C
+		#
+		#if cached_temperature + temperature_max_increase > Global.MAX_TEMPERATURE_C:
+			#temperature_high = cached_temperature + randf_range(-3, 0)
+		#elif cached_temperature - 3 < Global.MIN_TEMPERATURE:
+			#temperature_high = cached_temperature + randf_range(0, temperature_max_increase)
+		#else:
+			#temperature_high = cached_temperature + randf_range(-3, temperature_max_increase)
+		#
+		#temperature_low = temperature_high - randf_range(1, 6)
+		#
+		#Global.TEMPERATURE_HIGH_C = temperature_high
+		#Global.TEMPERATURE_LOW_C = temperature_low
+		#
+		#emit_signal("temperature_set")
 
 # Update sun and moon based on current time of day 
 func updateLights():
@@ -108,20 +108,35 @@ func updateRotation(delta):
 	#self.environment.background_energy_multiplier = multiplier
 	
 	var day_brightness : float = 1.25
-	var night_brightness : float = 3.75
+	var night_brightness : float = 5
 
 	# Transition ranges
-	var morning_start := 540.0
+	var morning_start := 300.0
 	var day_start := 590.0
 	var evening_start := 1850.0
-	var night_start := 1900.0
+	var night_start := 2300.0
 
 	var brightness : float
+	#if (timeOfDay < 10):
+		#pass
 
 	if timeOfDay < morning_start or timeOfDay > night_start:
 		# Full night
 		brightness = night_brightness
+		#if (timeOfDay < 2390):
 		timeOfDay += rateOfTime*2 * delta
+		if (timeOfDay > night_start):
+			var t := (2400 - timeOfDay) / 100
+			self.environment.volumetric_fog_length = lerp(0, 40, t)
+			if (self.environment.volumetric_fog_length < 0.1):
+				self.environment.volumetric_fog_length = 0.0
+		elif (timeOfDay < 100):
+			var t := timeOfDay / 100
+			self.environment.volumetric_fog_length = lerp(0, 40, t)
+		else:
+			self.environment.volumetric_fog_length = 40
+			pass
+		
 	elif timeOfDay >= day_start and timeOfDay <= evening_start:
 		# Full day
 		brightness = day_brightness
@@ -196,9 +211,9 @@ func updateSky():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	set_temp_for_day()
+	#set_temp_for_day()
 	self.environment.volumetric_fog_enabled = true
-	self.environment.volumetric_fog_length = 35
+	#self.environment.volumetric_fog_length = 80
 	#await get_tree().create_timer(3).timeout
 	#self.environment.sdfgi_enabled = false
 	#await get_tree().create_timer(3).timeout

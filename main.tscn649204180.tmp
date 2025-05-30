@@ -467,7 +467,7 @@ metadata/_custom_type_script = "uid://i5jcj7ukvoen"
 metadata/_edit_lock_ = true
 
 [node name="GodotSky" parent="." instance=ExtResource("74_34ol3")]
-timeOfDay = 600.0
+timeOfDay = 2180.0
 simulateTime = true
 rateOfTime = 2.5
 skyRotation = 47.0

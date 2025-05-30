@@ -13,8 +13,8 @@ const BUILD_VERSION = "v0.0.12"
 
 # World Constants
 const WORLD_PATH = "res://scenes/maingame/world.tscn"
-const MAX_TEMPERATURE_C = -10 # celsius
-const MIN_TEMPERATURE_C = -25 # celsius
+#const MAX_TEMPERATURE_C = -10 # celsius
+#const MIN_TEMPERATURE_C = -25 # celsius
 #const COMBINED_ITEMS_SCENE = preload("res://scenes/maingame/combined_items.tscn")
 #const ITEM_ICONS : Dictionary = {
 	#"a000001" : preload("res://textures/items/icons/ico_flint.png"),
@@ -87,21 +87,21 @@ const Resolutions: Dictionary = {"3840x2160":Vector2i(3840,2160),
 #var STEAM_NAME := ""
 
 # Lobby Variables 
-var DATA
-var LOBBY_ID : int = 0
-var LOBBY_MAX_MEMBERS : int = 4
-var LOBBY_MEMBERS := []
-var LOBBY_INVITE_ARG := false
-var LOBBY_PEER_INSTANCES := {} 
-var GLOBAL_TICK : int = 0
+#var DATA
+#var LOBBY_ID : int = 0
+#var LOBBY_MAX_MEMBERS : int = 4
+#var LOBBY_MEMBERS := []
+#var LOBBY_INVITE_ARG := false
+#var LOBBY_PEER_INSTANCES := {} 
+#var GLOBAL_TICK : int = 0
 
 # World Variables
 var WORLD_SEED : int = 0
 var TIME_OF_DAY : float = 1200.0
-var CURRENT_TEMPERATURE_C : float = (MAX_TEMPERATURE_C + MIN_TEMPERATURE_C) / 2
-var TEMPERATURE_HIGH_C : float = MAX_TEMPERATURE_C
-var TEMPERATURE_LOW_C : float = TEMPERATURE_HIGH_C - 3
-var SUN_WARMTH_MULTIPLIER : float = 1.0
+#var CURRENT_TEMPERATURE_C : float = (MAX_TEMPERATURE_C + MIN_TEMPERATURE_C) / 2
+#var TEMPERATURE_HIGH_C : float = MAX_TEMPERATURE_C
+#var TEMPERATURE_LOW_C : float = TEMPERATURE_HIGH_C - 3
+#var SUN_WARMTH_MULTIPLIER : float = 1.0
 var SPAWN_POINT := Vector2.ZERO
 var WIND_DIRECTION : Vector2 = Vector2.RIGHT
 
@@ -113,7 +113,7 @@ var IS_VSYNC_ENABLED := true
 var FIELD_OF_VIEW : int = 75
 var POSTP_OUTLINE_ON := true
 var POSTP_DITHER_ON := true
-var TEMPERATURE_UNIT : int = 0 # 0 is C; 1 is F
+#var TEMPERATURE_UNIT : int = 0 # 0 is C; 1 is F
 
 # Player Variables
 var INV_CELL_SIZE = INV_DEFAULT_CELL_SIZE:
@@ -158,10 +158,10 @@ var IS_IN_GAME := false
 		#OS.alert("License not found.\nPlease purchase a copy of the game to proceed.", "Game is not owned.")
 		#get_tree().quit()
 
-func _physics_process(_delta):
-	#Steam.run_callbacks()
-	
-	GLOBAL_TICK += 1
+#func _physics_process(_delta):
+	##Steam.run_callbacks()
+	#
+	#GLOBAL_TICK += 1
 	#if GLOBAL_TICK % 40 == 0:
 		#repair_globals()
 
@@ -196,45 +196,45 @@ func get_render_distance() -> int:
 	#IS_PAUSED = false
 	#IS_IN_GAME = false
 
-func get_current_temperature_display() -> float:
-	if TEMPERATURE_UNIT == 1:
-		return snapped(CURRENT_TEMPERATURE_C * 9.0/5.0 + 32.0, 0.1)
-	return snapped(CURRENT_TEMPERATURE_C, 0.1)
+#func get_current_temperature_display() -> float:
+	#if TEMPERATURE_UNIT == 1:
+		#return snapped(CURRENT_TEMPERATURE_C * 9.0/5.0 + 32.0, 0.1)
+	#return snapped(CURRENT_TEMPERATURE_C, 0.1)
 
-func get_temperature_high_display() -> float:
-	if TEMPERATURE_UNIT == 1:
-		return snapped(TEMPERATURE_HIGH_C * 9.0/5.0 + 32.0, 0.1)
-	return snapped(TEMPERATURE_HIGH_C, 0.1)
-	
-func get_temperature_low_display() -> float:
-	if TEMPERATURE_UNIT == 1:
-		return snapped(TEMPERATURE_LOW_C * 9.0/5.0 + 32.0, 0.1)
-	return snapped(TEMPERATURE_LOW_C, 0.1)
-
-func get_temperature_max_display() -> float:
-	if TEMPERATURE_UNIT == 1:
-		return snapped(MAX_TEMPERATURE_C * 9.0/5.0 + 32.0, 0.1)
-	return snapped(MAX_TEMPERATURE_C, 0.1)
-	
-func get_temperature_min_display() -> float:
-	if TEMPERATURE_UNIT == 1:
-		return snapped(MIN_TEMPERATURE_C * 9.0/5.0 + 32.0, 0.1)
-	return snapped(MIN_TEMPERATURE_C, 0.1)
-
-func get_temperature_sign_display() -> String:
-	if TEMPERATURE_UNIT == 1:
-		return "°F"
-	return "°C"
-
-func get_all_temperature_stats_debug() -> String:
-	var sign_t := get_temperature_sign_display()
-	var cur_t := get_current_temperature_display()
-	var lo_t := get_temperature_low_display()
-	var hi_t := get_temperature_high_display()
-	var min_t := get_temperature_min_display()
-	var max_t := get_temperature_max_display()
-	
-	return ("\nCurrent: %d%s\nLow: %d%s  High: %d%s\nMin: %d%s  Max: %d%s\n" % [cur_t, sign_t, lo_t, sign_t, hi_t, sign_t, min_t, sign_t, max_t, sign_t,])
+#func get_temperature_high_display() -> float:
+	#if TEMPERATURE_UNIT == 1:
+		#return snapped(TEMPERATURE_HIGH_C * 9.0/5.0 + 32.0, 0.1)
+	#return snapped(TEMPERATURE_HIGH_C, 0.1)
+	#
+#func get_temperature_low_display() -> float:
+	#if TEMPERATURE_UNIT == 1:
+		#return snapped(TEMPERATURE_LOW_C * 9.0/5.0 + 32.0, 0.1)
+	#return snapped(TEMPERATURE_LOW_C, 0.1)
+#
+#func get_temperature_max_display() -> float:
+	#if TEMPERATURE_UNIT == 1:
+		#return snapped(MAX_TEMPERATURE_C * 9.0/5.0 + 32.0, 0.1)
+	#return snapped(MAX_TEMPERATURE_C, 0.1)
+	#
+#func get_temperature_min_display() -> float:
+	#if TEMPERATURE_UNIT == 1:
+		#return snapped(MIN_TEMPERATURE_C * 9.0/5.0 + 32.0, 0.1)
+	#return snapped(MIN_TEMPERATURE_C, 0.1)
+#
+#func get_temperature_sign_display() -> String:
+	#if TEMPERATURE_UNIT == 1:
+		#return "°F"
+	#return "°C"
+#
+#func get_all_temperature_stats_debug() -> String:
+	#var sign_t := get_temperature_sign_display()
+	#var cur_t := get_current_temperature_display()
+	#var lo_t := get_temperature_low_display()
+	#var hi_t := get_temperature_high_display()
+	#var min_t := get_temperature_min_display()
+	#var max_t := get_temperature_max_display()
+	#
+	#return ("\nCurrent: %d%s\nLow: %d%s  High: %d%s\nMin: %d%s  Max: %d%s\n" % [cur_t, sign_t, lo_t, sign_t, hi_t, sign_t, min_t, sign_t, max_t, sign_t,])
 
 func Convert_Percentage_To_Decibel(percentage : float):
 	var scale : float = 20.0

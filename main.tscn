@@ -1,4 +1,4 @@
-[gd_scene load_steps=127 format=3 uid="uid://dxo8m8y6lnqo1"]
+[gd_scene load_steps=138 format=3 uid="uid://dxo8m8y6lnqo1"]
 
 [ext_resource type="Material" uid="uid://clytu0rh8kfc7" path="res://Materials/grass.tres" id="1_lquwl"]
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="3_h2yge"]
@@ -102,6 +102,12 @@
 [ext_resource type="AudioStream" uid="uid://dp6yjmufb0gvl" path="res://Music/11 Global Forecast (Nighttime - Layer Only).mp3" id="84_yysqy"]
 [ext_resource type="PackedScene" uid="uid://qjqve05lgky6" path="res://Models/TerrainAssets/Pirate/structure-platform-dock.glb" id="101_inymm"]
 [ext_resource type="PackedScene" uid="uid://nmpf6ltddfb3" path="res://Models/TerrainAssets/Pirate/structure-platform.glb" id="102_jcxqu"]
+[ext_resource type="Texture2D" uid="uid://daym6au3hjujn" path="res://Models/TerrainMeta/Heightmap_0_0.res" id="103_jcxqu"]
+[ext_resource type="Shader" uid="uid://bemy484y1w7hr" path="res://Models/MetaAssets/transparent.gdshader" id="103_ywjan"]
+[ext_resource type="Texture2D" uid="uid://dcbl5i0d8c2hq" path="res://Models/MetaAssets/Black.png" id="104_m74q3"]
+[ext_resource type="Script" uid="uid://c2l8t4xcdxwvu" path="res://addons/terrabrush/Scripts/EditorResources/TextureSetResource.cs" id="105_tko6h"]
+[ext_resource type="Script" uid="uid://043vjblb04jf" path="res://addons/terrabrush/Scripts/EditorResources/TextureSetsResource.cs" id="106_am8a1"]
+[ext_resource type="Texture2D" uid="uid://b6jf7ijv4inkn" path="res://Models/TerrainMeta/Splatmap_0_0_0.res" id="108_8dc3g"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_inymm"]
 size = Vector3(2.4, 0.6, 12.5)
@@ -179,8 +185,8 @@ RandomSize = false
 RandomSizeFactorMin = 0.2
 RandomSizeFactorMax = 1.2
 ObjectScenes = [ExtResource("59_vieuh"), ExtResource("60_yjja3"), ExtResource("61_l0gw7"), ExtResource("62_inymm"), ExtResource("63_jcxqu"), ExtResource("64_0arob"), ExtResource("65_dij0e"), ExtResource("66_k1udn"), ExtResource("67_wat4s"), ExtResource("68_ywjan"), ExtResource("69_m74q3"), ExtResource("70_tko6h"), ExtResource("71_am8a1"), ExtResource("72_8dc3g"), ExtResource("73_htgcl")]
-LODList = null
-LODMeshes = null
+LODList = []
+LODMeshes = []
 UpdateDistanceThreshold = 1.0
 UpdateTimeFrequency = 0.1
 VisualInstanceLayers = 1
@@ -256,6 +262,35 @@ backlight = Color(0.886275, 0.0470588, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_inymm"]
 albedo_color = Color(0.863271, 0.509367, 0.329184, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_htgcl"]
+render_priority = 0
+shader = ExtResource("103_ywjan")
+
+[sub_resource type="Resource" id="Resource_smeu8"]
+script = ExtResource("105_tko6h")
+Name = "Wave"
+AlbedoTexture = ExtResource("104_m74q3")
+TextureDetail = -1
+Triplanar = false
+metadata/_custom_type_script = "uid://c2l8t4xcdxwvu"
+
+[sub_resource type="Resource" id="Resource_f3y11"]
+script = ExtResource("106_am8a1")
+TextureSets = [SubResource("Resource_smeu8")]
+metadata/_custom_type_script = "uid://043vjblb04jf"
+
+[sub_resource type="Resource" id="Resource_0arob"]
+script = ExtResource("7_ycdy4")
+ZonePosition = Vector2i(0, 0)
+HeightMapTexture = ExtResource("103_jcxqu")
+SplatmapsTexture = [ExtResource("108_8dc3g")]
+FoliagesTexture = null
+ObjectsTexture = null
+
+[sub_resource type="Resource" id="Resource_dij0e"]
+script = ExtResource("10_2cqfq")
+Zones = [SubResource("Resource_0arob")]
 
 [node name="Main" type="Node3D"]
 
@@ -342,7 +377,7 @@ WaterDefinition = ExtResource("60_kkkcx")
 SnowDefinition = SubResource("Resource_birbe")
 TerrainZones = SubResource("Resource_4obbf")
 metadata/_custom_type_script = "uid://i5jcj7ukvoen"
-metadata/_edit_lock_ = false
+metadata/_edit_lock_ = true
 
 [node name="GodotSky" parent="." instance=ExtResource("74_34ol3")]
 timeOfDay = 600.0
@@ -396,5 +431,18 @@ face_material = SubResource("StandardMaterial3D_n5t1e")
 transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -35, -8.9, 19.6)
 animation = "Armature|mixamo_com|Layer0"
 skin_material = SubResource("StandardMaterial3D_inymm")
+
+[node name="TerrainMeta" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_h2yge")
+DataPath = "res://Models/TerrainMeta/"
+VisualInstanceLayers = 2
+CustomShader = SubResource("ShaderMaterial_htgcl")
+CollisionLayers = -2147483648
+CollisionMask = -2147483648
+TextureSets = SubResource("Resource_f3y11")
+TerrainZones = SubResource("Resource_dij0e")
+metadata/_custom_type_script = "uid://i5jcj7ukvoen"
+metadata/_edit_lock_ = true
 
 [editable path="GodotSky"]

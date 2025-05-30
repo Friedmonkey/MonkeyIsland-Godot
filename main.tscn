@@ -1,4 +1,4 @@
-[gd_scene load_steps=144 format=3 uid="uid://dxo8m8y6lnqo1"]
+[gd_scene load_steps=153 format=3 uid="uid://dxo8m8y6lnqo1"]
 
 [ext_resource type="Material" uid="uid://clytu0rh8kfc7" path="res://Materials/grass.tres" id="1_lquwl"]
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="3_h2yge"]
@@ -100,7 +100,7 @@
 [ext_resource type="AudioStream" uid="uid://boqiltym62qnf" path="res://Music/10 Global Forecast (Daytime - Layer Only).mp3" id="83_swlj1"]
 [ext_resource type="Texture2D" uid="uid://box5jsl7kgd3c" path="res://Models/Terrain/Object_1_0_1.res" id="83_yjja3"]
 [ext_resource type="AudioStream" uid="uid://dp6yjmufb0gvl" path="res://Music/11 Global Forecast (Nighttime - Layer Only).mp3" id="84_yysqy"]
-[ext_resource type="Material" uid="uid://bjv4od7gfbch0" path="res://Shaders/water.tres" id="92_8dc3g"]
+[ext_resource type="Shader" uid="uid://blgke1tnfvxsb" path="res://Shaders/water.gdshader" id="92_8dc3g"]
 [ext_resource type="PackedScene" uid="uid://qjqve05lgky6" path="res://Models/TerrainAssets/Pirate/structure-platform-dock.glb" id="101_inymm"]
 [ext_resource type="PackedScene" uid="uid://nmpf6ltddfb3" path="res://Models/TerrainAssets/Pirate/structure-platform.glb" id="102_jcxqu"]
 [ext_resource type="AudioStream" uid="uid://cw4rku1gm358l" path="res://Models/MetaAssets/ocean-waves.mp3" id="102_m74q3"]
@@ -230,7 +230,75 @@ SnowTexture = ExtResource("75_53bls")
 script = ExtResource("10_2cqfq")
 Zones = [SubResource("Resource_jbvwl")]
 
-[sub_resource type="QuadMesh" id="QuadMesh_34ol3"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_8dc3g"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8dc3g"]
+noise_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_htgcl"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_8dc3g")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_smeu8"]
+noise_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_f3y11"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_smeu8")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_cpm2s"]
+noise_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_u81y6"]
+seamless = true
+noise = SubResource("FastNoiseLite_cpm2s")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_rt5wr"]
+noise_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_mnw77"]
+noise = SubResource("FastNoiseLite_rt5wr")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_htgcl"]
+render_priority = 0
+shader = ExtResource("92_8dc3g")
+shader_parameter/color_shallow = Color(0.0458995, 0.568973, 0.699408, 1)
+shader_parameter/color_deep = Color(0.0562505, 0.356282, 0.683755, 1)
+shader_parameter/transparency = 0.2
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.6
+shader_parameter/max_visible_depth = 55.5
+shader_parameter/wave_a = SubResource("NoiseTexture2D_u81y6")
+shader_parameter/wave_b = SubResource("NoiseTexture2D_mnw77")
+shader_parameter/wave_move_direction_a = Vector2(-1, 0)
+shader_parameter/wave_move_direction_b = Vector2(0, 1)
+shader_parameter/wave_noise_scale_a = 1.0
+shader_parameter/wave_noise_scale_b = 1.0
+shader_parameter/wave_time_scale_a = 0.05
+shader_parameter/wave_time_scale_b = 0.05
+shader_parameter/wave_height_scale = 0.45
+shader_parameter/wave_normal_flatness = 50.0
+shader_parameter/surface_normals_a = SubResource("NoiseTexture2D_htgcl")
+shader_parameter/surface_normals_b = SubResource("NoiseTexture2D_f3y11")
+shader_parameter/surface_normals_move_direction_a = Vector2(-1, 0.2)
+shader_parameter/surface_normals_move_direction_b = Vector2(0.2, 1)
+shader_parameter/surface_texture_roughness = 0.28
+shader_parameter/surface_texture_scale = 0.077
+shader_parameter/surface_texture_time_scale = 0.05
+shader_parameter/ssr_resolution = 1.0
+shader_parameter/ssr_max_travel = 30.0
+shader_parameter/ssr_max_diff = 4.0
+shader_parameter/ssr_mix_strength = 0.7
+shader_parameter/ssr_screen_border_fadeout = 0.3
+shader_parameter/refraction_intensity = 0.09
+shader_parameter/border_color = Color(1, 1, 1, 1)
+shader_parameter/border_scale = 2.0
+shader_parameter/border_near = 0.5
+shader_parameter/border_far = 300.0
+shader_parameter/cut_out_x = 0.0
+shader_parameter/cut_out_z = 0.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_8dc3g"]
 
@@ -411,9 +479,9 @@ light_specular = 5.0
 light_specular = 5.0
 
 [node name="OceanWater" type="MeshInstance3D" parent="."]
-transform = Transform3D(800, 0, 0, 0, -3.49691e-05, 150, 0, -800, -6.55671e-06, 0, -9.1, 0)
-mesh = SubResource("QuadMesh_34ol3")
-surface_material_override/0 = ExtResource("92_8dc3g")
+transform = Transform3D(160, 0, 0, 0, 1, 0, 0, 0, 150, 0, -9.7, 0)
+mesh = SubResource("PlaneMesh_8dc3g")
+surface_material_override/0 = SubResource("ShaderMaterial_htgcl")
 
 [node name="OceanBottom" type="MeshInstance3D" parent="."]
 transform = Transform3D(4000, 0, 0, 0, -0.000174846, 750, 0, -4000, -3.27835e-05, 0, -43.7, 0)

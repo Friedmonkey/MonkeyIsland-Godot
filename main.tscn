@@ -1,4 +1,4 @@
-[gd_scene load_steps=147 format=3 uid="uid://dxo8m8y6lnqo1"]
+[gd_scene load_steps=144 format=3 uid="uid://dxo8m8y6lnqo1"]
 
 [ext_resource type="Material" uid="uid://clytu0rh8kfc7" path="res://Materials/grass.tres" id="1_lquwl"]
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="3_h2yge"]
@@ -232,6 +232,12 @@ Zones = [SubResource("Resource_jbvwl")]
 
 [sub_resource type="QuadMesh" id="QuadMesh_34ol3"]
 
+[sub_resource type="QuadMesh" id="QuadMesh_8dc3g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8dc3g"]
+albedo_color = Color(0.0666667, 0.0862745, 0.117647, 1)
+roughness = 0.5
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_birbe"]
 albedo_color = Color(0.759071, 0.107256, 0.767531, 1)
 
@@ -390,7 +396,7 @@ WaterDefinition = ExtResource("60_kkkcx")
 SnowDefinition = SubResource("Resource_birbe")
 TerrainZones = SubResource("Resource_4obbf")
 metadata/_custom_type_script = "uid://i5jcj7ukvoen"
-metadata/_edit_lock_ = true
+metadata/_edit_lock_ = false
 
 [node name="GodotSky" parent="." instance=ExtResource("74_34ol3")]
 timeOfDay = 600.0
@@ -405,13 +411,15 @@ light_specular = 5.0
 light_specular = 5.0
 
 [node name="OceanWater" type="MeshInstance3D" parent="."]
-transform = Transform3D(800, 0, 0, 0, -3.49691e-05, 150, 0, -800, -6.55671e-06, 0, -9.1, -50.2)
+transform = Transform3D(800, 0, 0, 0, -3.49691e-05, 150, 0, -800, -6.55671e-06, 0, -9.1, 0)
 mesh = SubResource("QuadMesh_34ol3")
 surface_material_override/0 = ExtResource("92_8dc3g")
 
 [node name="OceanBottom" type="MeshInstance3D" parent="."]
-transform = Transform3D(800, 0, 0, 0, -3.49691e-05, 150, 0, -800, -6.55671e-06, 0, -43.7, 0)
-visible = false
+transform = Transform3D(4000, 0, 0, 0, -0.000174846, 750, 0, -4000, -3.27835e-05, 0, -43.7, 0)
+cast_shadow = 0
+mesh = SubResource("QuadMesh_8dc3g")
+surface_material_override/0 = SubResource("StandardMaterial3D_8dc3g")
 
 [node name="Player" parent="." node_paths=PackedStringArray("sea_level") instance=ExtResource("75_c2n8d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.1, 13, -10.4)

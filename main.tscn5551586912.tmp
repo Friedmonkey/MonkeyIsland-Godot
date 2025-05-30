@@ -382,7 +382,7 @@ WaterDefinition = ExtResource("60_kkkcx")
 SnowDefinition = SubResource("Resource_birbe")
 TerrainZones = SubResource("Resource_4obbf")
 metadata/_custom_type_script = "uid://i5jcj7ukvoen"
-metadata/_edit_lock_ = false
+metadata/_edit_lock_ = true
 
 [node name="GodotSky" parent="." instance=ExtResource("74_34ol3")]
 timeOfDay = 600.0
@@ -405,19 +405,16 @@ surface_material_override/0 = SubResource("StandardMaterial3D_34ol3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.1, 13, -10.4)
 sea_level = NodePath("../OceanWater")
 
-[node name="BackgroundMusic" type="Node" parent="." node_paths=PackedStringArray("player")]
+[node name="BackgroundMusic" type="Node" parent="."]
 script = ExtResource("76_gx4rg")
 tracks = Array[AudioStream]([ExtResource("77_ppx11"), ExtResource("78_1yv1y"), ExtResource("79_5yh34"), ExtResource("80_pjuso"), ExtResource("76_wy5fy"), ExtResource("82_23xmf"), ExtResource("83_swlj1"), ExtResource("84_yysqy")])
-player = NodePath("../Player")
 
 [node name="Music" type="AudioStreamPlayer" parent="BackgroundMusic"]
 bus = &"Music"
 
 [node name="Waves" type="AudioStreamPlayer" parent="BackgroundMusic"]
 stream = ExtResource("102_m74q3")
-autoplay = true
 bus = &"Ambiance"
-parameters/looping = true
 
 [node name="Npcs" type="Node" parent="."]
 
@@ -446,6 +443,7 @@ skin_material = SubResource("StandardMaterial3D_inymm")
 
 [node name="TerrainMeta" type="Node3D" parent="."]
 unique_name_in_owner = true
+visible = false
 script = ExtResource("3_h2yge")
 CollisionOnly = true
 DataPath = "res://Models/TerrainMeta/"

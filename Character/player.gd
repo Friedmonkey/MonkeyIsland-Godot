@@ -91,30 +91,34 @@ func get_current_floor(info) -> String:
 		return "Snow"
 	
 	var textures = info.get("Textures")
-	var max_factor = -INF
+	#var max_factor = -INF
 	var max_item = null
-	
-	for item in textures:
-		var factor = item.get("Factor")
-		if factor > max_factor:
-			max_factor = factor	
-			max_item = item
-		pass
-	pass
-	
+	max_item = textures[0]
+	#
+	#for item in textures:
+		#var factor = item.get("Factor")
+		#if factor > max_factor:
+			#max_factor = factor	
+			#max_item = item
+		#pass
+	#pass
+	#
 	if max_item != null:
 		return max_item.get("Name")
 	return ""
 
-func handle_floor():
-	var pos = self.global_position
-	var info = %TerraTerrain.GetPositionInformation(pos.x, pos.z)
-	%TerraTerrain.AddInteractionPoint(pos.x, pos.z)
-	var material_name = get_current_floor(info)
+func handle_floor(collision: KinematicCollision3D):
+	var material_name : String = "Grass"
+	var collider1 := collision.get_collider()
+	var collider2 = %TerraTerrain.get("Terrain").get("TerrainCollider")
+	if collider1 == collider2:
+		var pos = self.global_position
+		var info = %TerraTerrain.GetPositionInformation(pos.x, pos.z)
+		%TerraTerrain.AddInteractionPoint(pos.x, pos.z)
+		material_name = get_current_floor(info)
 	
-	if material_name != "":
-		print("Material detected:", material_name)
-		play_footstep_sound(material_name)
+	play_footstep_sound(material_name)
+	
 
 func play_footstep_sound(material_name: String) -> void:
 	if material_name in footstep_sounds:
@@ -130,6 +134,10 @@ func jump(jump_state : JumpState) -> void:
 	var sound = punch_sounds[randi() % punch_sounds.size()]
 	$JumpSound.stream = sound
 	$JumpSound.play()
+	
+#func _process(delta: float) -> void:
+	#
+	#pass
 
 func _physics_process(delta: float) -> void:
 	if position.y+1 < sea_level.position.y:
@@ -143,13 +151,13 @@ func _physics_process(delta: float) -> void:
 			##var idk = $"../TerraBrush".GetPositionInformation(movement_direction.x, movement_direction.y)
 			#var idk2 = $"../TerraBrush".AddInteractionPoint(movement_direction.x, movement_direction.y)
 			#pass
-	
-	if is_on_floor():
+	var collision := get_last_slide_collision()
+	if is_on_floor() && collision != null:
 		air_jump_counter = 0
 		if (step_interval != 404):
 			step_timer -= delta
 			if step_timer <= 0.0:
-				handle_floor()
+				handle_floor(collision)
 				step_timer = step_interval
 	else:
 		step_timer = 0.0  # reset if airborne

@@ -412,7 +412,7 @@ shape = SubResource("BoxShape3D_jcxqu")
 [node name="TerraTerrain" type="Node3D" parent="Island"]
 unique_name_in_owner = true
 script = ExtResource("3_euinf")
-DataPath = "res://Models/Terrain_Island1_Start"
+DataPath = "res://Models/Terrain_Island1_Lush"
 TextureSets = ExtResource("4_yaqvc")
 Foliages = [SubResource("Resource_a6jrf")]
 Objects = [SubResource("Resource_2n44k"), SubResource("Resource_jcxqu")]

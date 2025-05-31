@@ -1,4 +1,4 @@
-[gd_scene load_steps=148 format=3 uid="uid://dxo8m8y6lnqo1"]
+[gd_scene load_steps=147 format=3 uid="uid://dxo8m8y6lnqo1"]
 
 [ext_resource type="PackedScene" uid="uid://qjqve05lgky6" path="res://Models/TerrainAssets/Pirate/structure-platform-dock.glb" id="1_gyhwg"]
 [ext_resource type="PackedScene" uid="uid://nmpf6ltddfb3" path="res://Models/TerrainAssets/Pirate/structure-platform.glb" id="2_cx0or"]
@@ -80,13 +80,12 @@
 [ext_resource type="Texture2D" uid="uid://c8qdmv4cguju8" path="res://Materials/Snow/Snow010A_1K-PNG_Roughness.png" id="78_wlmbn"]
 [ext_resource type="Texture2D" uid="uid://bgfsjxao36an4" path="res://Materials/Snow/Snow010A_1K-PNG_Color.png" id="79_oq7ce"]
 [ext_resource type="Script" uid="uid://di03satw2avie" path="res://addons/terrabrush/Scripts/EditorResources/SnowResource.cs" id="80_076y6"]
-[ext_resource type="Texture2D" uid="uid://bm4qmwhsn0tp0" path="res://Models/Terrain_Island1_Start/Foliage_1_0_0.res" id="81_gyhwg"]
+[ext_resource type="Texture2D" uid="uid://dko0iukt5i803" path="res://Models/Terrain_Island1_Start/Foliage_1_0_0.res" id="81_jlfs7"]
 [ext_resource type="Texture2D" uid="uid://df2qubx52irx3" path="res://Models/Terrain_Island1_Start/Heightmap_1_0.res" id="82_gyhwg"]
-[ext_resource type="Texture2D" uid="uid://01sv5w1p8cjt" path="res://Models/Terrain_Island1_Start/Object_1_0_0.res" id="83_cx0or"]
-[ext_resource type="Texture2D" uid="uid://box5jsl7kgd3c" path="res://Models/Terrain_Island1_Start/Object_1_0_1.res" id="84_re08y"]
-[ext_resource type="Texture2D" uid="uid://7u8180vnvymu" path="res://Models/Terrain_Island1_Start/Snow_1_0.res" id="85_pfcv5"]
-[ext_resource type="Texture2D" uid="uid://dfpjk4hu57twn" path="res://Models/Terrain_Island1_Start/Splatmap_1_0_0.res" id="86_gyhwg"]
-[ext_resource type="Texture2D" uid="uid://wa8qsytfmx0e" path="res://Models/Terrain_Island1_Start/Water_1_0.res" id="87_k5nic"]
+[ext_resource type="Texture2D" uid="uid://b6a7s30ik3wml" path="res://Models/Terrain_Island1_Start/Object_1_0_0.res" id="83_gyhwg"]
+[ext_resource type="Texture2D" uid="uid://cewfp1cdlnach" path="res://Models/Terrain_Island1_Start/Object_1_0_1.res" id="84_cx0or"]
+[ext_resource type="Texture2D" uid="uid://cq0avivfbf3n0" path="res://Models/Terrain_Island1_Start/Snow_1_0.res" id="85_re08y"]
+[ext_resource type="Texture2D" uid="uid://c52dhc76w5pod" path="res://Models/Terrain_Island1_Start/Water_1_0.res" id="87_pfcv5"]
 [ext_resource type="Script" uid="uid://d2qebwt0ednya" path="res://addons/terrabrush/Scripts/EditorResources/ZoneResource.cs" id="88_so4m5"]
 [ext_resource type="Script" uid="uid://nt172hqpx1j5" path="res://addons/terrabrush/Scripts/EditorResources/ZonesResource.cs" id="89_locyf"]
 [ext_resource type="Shader" uid="uid://blgke1tnfvxsb" path="res://Shaders/water.gdshader" id="90_6vrph"]
@@ -96,8 +95,8 @@
 [ext_resource type="Texture2D" uid="uid://cwhkitjkxlewj" path="res://Models/MetaAssets/water.jpg" id="94_v5s76"]
 [ext_resource type="Texture2D" uid="uid://b4j3fhv8euxxo" path="res://Models/MetaAssets/grass.png" id="95_sqslx"]
 [ext_resource type="Script" uid="uid://043vjblb04jf" path="res://addons/terrabrush/Scripts/EditorResources/TextureSetsResource.cs" id="96_vq8ay"]
-[ext_resource type="Texture2D" uid="uid://bn2w0lcadllbh" path="res://Models/TerrainMeta_Island1_Start/Heightmap_1_0_meta_new.res" id="97_wofg6"]
-[ext_resource type="Texture2D" uid="uid://dvlbpyrspae80" path="res://Models/TerrainMeta_Island1_Start/Splatmap_0_0_0.res" id="98_gyhwg"]
+[ext_resource type="Texture2D" uid="uid://b7ixhh8ktm5bh" path="res://Models/TerrainMeta_Island1_Start/Heightmap_1_0_meta_new.res" id="97_wofg6"]
+[ext_resource type="Texture2D" uid="uid://bppnolt7tbjvy" path="res://Models/Terrain_Island1_Start/Splatmap_1_0_0.res" id="98_gyhwg"]
 [ext_resource type="PackedScene" uid="uid://1gfropwtqfbn" path="res://GodotSky/GodotSky.tscn" id="99_v6orx"]
 [ext_resource type="PackedScene" uid="uid://drenu2srr1q61" path="res://Character/player.tscn" id="100_oelay"]
 [ext_resource type="Script" uid="uid://dq81uc0huxowy" path="res://background_music.gd" id="101_j0007"]
@@ -219,11 +218,11 @@ metadata/_custom_type_script = "uid://di03satw2avie"
 script = ExtResource("88_so4m5")
 ZonePosition = Vector2i(0, 0)
 HeightMapTexture = ExtResource("82_gyhwg")
-SplatmapsTexture = [ExtResource("86_gyhwg")]
-FoliagesTexture = [ExtResource("81_gyhwg")]
-ObjectsTexture = [ExtResource("83_cx0or"), ExtResource("84_re08y")]
-WaterTexture = ExtResource("87_k5nic")
-SnowTexture = ExtResource("85_pfcv5")
+SplatmapsTexture = [ExtResource("98_gyhwg")]
+FoliagesTexture = [ExtResource("81_jlfs7")]
+ObjectsTexture = [ExtResource("83_gyhwg"), ExtResource("84_cx0or")]
+WaterTexture = ExtResource("87_pfcv5")
+SnowTexture = ExtResource("85_re08y")
 
 [sub_resource type="Resource" id="Resource_4obbf"]
 script = ExtResource("89_locyf")
@@ -411,7 +410,6 @@ shape = SubResource("BoxShape3D_jcxqu")
 
 [node name="TerraTerrain" type="Node3D" parent="Island"]
 unique_name_in_owner = true
-visible = false
 script = ExtResource("3_re08y")
 DataPath = "res://Models/Terrain_Island1_Start"
 TextureSets = ExtResource("4_pfcv5")

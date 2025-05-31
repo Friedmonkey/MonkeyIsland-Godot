@@ -24,7 +24,6 @@ sdfgi_normal_bias = 2.0
 glow_enabled = true
 glow_blend_mode = 0
 glow_hdr_scale = 0.5
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.01
 volumetric_fog_albedo = Color(0.580392, 0.807843, 0.996078, 1)
 volumetric_fog_emission_energy = 0.0

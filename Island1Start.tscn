@@ -384,7 +384,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.4)
 
 [node name="structure-platform4" parent="Island/Dock" instance=ExtResource("2_cx0or")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.9)
-visible = false
 
 [node name="structure-platform5" parent="Island/Dock" instance=ExtResource("2_cx0or")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.4)
@@ -468,7 +467,7 @@ Foliages = []
 Objects = []
 TerrainZones = SubResource("Resource_dij0e")
 metadata/_custom_type_script = "uid://i5jcj7ukvoen"
-metadata/_edit_lock_ = true
+metadata/_edit_lock_ = false
 
 [node name="GodotSky" parent="." instance=ExtResource("99_v6orx")]
 timeOfDay = 600.0
@@ -502,6 +501,7 @@ parameters/looping = true
 
 [node name="Grass" type="AudioStreamPlayer" parent="BackgroundMusic"]
 stream = ExtResource("111_vdsj7")
+volume_db = -80.0
 autoplay = true
 bus = &"Ambiance"
 parameters/looping = true

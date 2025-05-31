@@ -58,6 +58,8 @@ func handle_terrain_meta(delta: float) -> void:
 	grass_target_volume_db = volume_from_factor(grass_factor)
 	grass_current_volume_db = lerp(grass_current_volume_db, grass_target_volume_db, delta * 5.0)
 	grass.volume_db = min(grass_current_volume_db, 15)
+	if (grass_factor < 0.00001):
+		grass.volume_db = -80
 	
 	# Smooth interpolation (tweak 5.0 to change speed)
 func get_terrain_meta(meta : String) -> float:

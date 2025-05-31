@@ -1,5 +1,6 @@
-[gd_scene load_steps=148 format=3 uid="uid://sunneo5jhls7"]
+[gd_scene load_steps=157 format=3 uid="uid://sunneo5jhls7"]
 
+[ext_resource type="Script" uid="uid://b40mx1wjco0p" path="res://island.gd" id="1_mq2e6"]
 [ext_resource type="PackedScene" uid="uid://qjqve05lgky6" path="res://Models/TerrainAssets/Pirate/structure-platform-dock.glb" id="1_s2i5k"]
 [ext_resource type="PackedScene" uid="uid://nmpf6ltddfb3" path="res://Models/TerrainAssets/Pirate/structure-platform.glb" id="2_v36do"]
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="3_akxy1"]
@@ -111,12 +112,10 @@
 [ext_resource type="AudioStream" uid="uid://dp6yjmufb0gvl" path="res://Music/11 Global Forecast (Nighttime - Layer Only).mp3" id="109_an6ty"]
 [ext_resource type="AudioStream" uid="uid://cw4rku1gm358l" path="res://Models/MetaAssets/ocean-waves.mp3" id="110_blg5e"]
 [ext_resource type="AudioStream" uid="uid://b4x6h1b5yxrl0" path="res://Models/MetaAssets/grass.mp3" id="111_rnbef"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_inymm"]
-size = Vector3(2.4, 0.6, 12.5)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_jcxqu"]
-size = Vector3(0.4, 0.4, 0.4)
+[ext_resource type="PackedScene" uid="uid://ohvjt7ugk2h4" path="res://Models/TerrainAssets/Survival/floor.glb" id="112_2r0km"]
+[ext_resource type="PackedScene" uid="uid://b6tilnengfdfk" path="res://Models/TerrainAssets/Survival/fish.glb" id="112_mq2e6"]
+[ext_resource type="PackedScene" uid="uid://b3e8huxyf7lk8" path="res://Models/TerrainAssets/Survival/campfire-pit.glb" id="112_yxdgt"]
+[ext_resource type="PackedScene" uid="uid://b8d8rvcpph7sg" path="res://Models/TerrainAssets/Survival/campfire-stand.glb" id="113_2r0km"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_0odxb"]
 center_offset = Vector3(0, 0.5, 0)
@@ -305,26 +304,6 @@ shader_parameter/cut_out_z = 0.0
 albedo_color = Color(0.0666667, 0.0862745, 0.117647, 1)
 roughness = 0.5
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wy5fy"]
-albedo_color = Color(0.735945, 0.606586, 0.427306, 1)
-metallic = 0.4
-metallic_specular = 0.3
-roughness = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yysqy"]
-albedo_color = Color(0.288518, 0.288518, 0.288518, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n5t1e"]
-albedo_color = Color(0.886275, 0.0470588, 0, 1)
-emission_enabled = true
-emission = Color(0.886275, 0.0470588, 0, 1)
-emission_energy_multiplier = 2.62
-subsurf_scatter_strength = 1.0
-backlight = Color(0.886275, 0.0470588, 0, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_inymm"]
-albedo_color = Color(0.863271, 0.509367, 0.329184, 1)
-
 [sub_resource type="Resource" id="Resource_smeu8"]
 script = ExtResource("93_x7xdl")
 Name = "None"
@@ -366,48 +345,48 @@ ObjectsTexture = []
 script = ExtResource("89_pho30")
 Zones = [SubResource("Resource_0arob")]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_mq2e6"]
+size = Vector3(7.5, 0.1, 7.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d7jg3"]
+size = Vector3(2, 1.8, 0.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_inymm"]
+size = Vector3(2.4, 0.6, 12.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jcxqu"]
+size = Vector3(0.4, 0.4, 0.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wy5fy"]
+albedo_color = Color(0.735945, 0.606586, 0.427306, 1)
+metallic = 0.4
+metallic_specular = 0.3
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yysqy"]
+albedo_color = Color(0.288518, 0.288518, 0.288518, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n5t1e"]
+albedo_color = Color(0.886275, 0.0470588, 0, 1)
+emission_enabled = true
+emission = Color(0.886275, 0.0470588, 0, 1)
+emission_energy_multiplier = 2.62
+subsurf_scatter_strength = 1.0
+backlight = Color(0.886275, 0.0470588, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_inymm"]
+albedo_color = Color(0.863271, 0.509367, 0.329184, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2r0km"]
+albedo_color = Color(0.513233, 0.513233, 0.513233, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mq2e6"]
+albedo_color = Color(0.826083, 0.521589, 0.198714, 1)
+
 [node name="Main" type="Node3D"]
 
 [node name="Island" type="Node" parent="."]
-
-[node name="Dock" type="StaticBody3D" parent="Island"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.4, -9.8, 8.4)
-
-[node name="structure-platform-dock2" parent="Island/Dock" instance=ExtResource("1_s2i5k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.9)
-
-[node name="structure-platform2" parent="Island/Dock" instance=ExtResource("2_v36do")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.899999)
-
-[node name="structure-platform3" parent="Island/Dock" instance=ExtResource("2_v36do")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.4)
-
-[node name="structure-platform4" parent="Island/Dock" instance=ExtResource("2_v36do")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.9)
-visible = false
-
-[node name="structure-platform5" parent="Island/Dock" instance=ExtResource("2_v36do")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.4)
-
-[node name="DockCollision" type="CollisionShape3D" parent="Island/Dock"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 5.95)
-shape = SubResource("BoxShape3D_inymm")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Island/Dock"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.1, 11.9)
-shape = SubResource("BoxShape3D_jcxqu")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Island/Dock"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.1, 11.9)
-shape = SubResource("BoxShape3D_jcxqu")
-
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="Island/Dock"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.1, 9.9)
-shape = SubResource("BoxShape3D_jcxqu")
-
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="Island/Dock"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.1, 9.9)
-shape = SubResource("BoxShape3D_jcxqu")
+script = ExtResource("1_mq2e6")
 
 [node name="TerraTerrain" type="Node3D" parent="Island"]
 unique_name_in_owner = true
@@ -436,24 +415,6 @@ mesh = SubResource("QuadMesh_8dc3g")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_8dc3g")
 
-[node name="Npcs" type="Node" parent="Island"]
-
-[node name="GoldenApe" parent="Island/Npcs" instance=ExtResource("91_yv5t4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.8, -8.7, -18.8)
-animation = "Dancing2"
-skin_material = SubResource("StandardMaterial3D_wy5fy")
-
-[node name="EvilMonkey" parent="Island/Npcs" instance=ExtResource("91_yv5t4")]
-transform = Transform3D(-0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, -0.984808, -8.3, -7.2, 28.2)
-animation = "Man_Run"
-skin_material = SubResource("StandardMaterial3D_yysqy")
-face_material = SubResource("StandardMaterial3D_n5t1e")
-
-[node name="DockMonkey" parent="Island/Npcs" instance=ExtResource("91_yv5t4")]
-transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -35, -8.9, 19.6)
-animation = "Armature|mixamo_com|Layer0"
-skin_material = SubResource("StandardMaterial3D_inymm")
-
 [node name="TerrainMeta" type="Node3D" parent="Island"]
 unique_name_in_owner = true
 visible = false
@@ -468,7 +429,7 @@ Foliages = []
 Objects = []
 TerrainZones = SubResource("Resource_dij0e")
 metadata/_custom_type_script = "uid://i5jcj7ukvoen"
-metadata/_edit_lock_ = true
+metadata/_edit_lock_ = false
 
 [node name="GodotSky" parent="." instance=ExtResource("99_vwksr")]
 timeOfDay = 600.0
@@ -483,7 +444,7 @@ light_specular = 5.0
 light_specular = 5.0
 
 [node name="Player" parent="." node_paths=PackedStringArray("sea_level") instance=ExtResource("100_4s6vx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.1, 13, -10.4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.1, -0.0999999, -10.4)
 sea_level = NodePath("../Island/OceanWater")
 
 [node name="BackgroundMusic" type="Node" parent="." node_paths=PackedStringArray("player")]
@@ -505,5 +466,119 @@ stream = ExtResource("111_rnbef")
 autoplay = true
 bus = &"Ambiance"
 parameters/looping = true
+
+[node name="Decorations" type="Node" parent="."]
+
+[node name="Floor" type="StaticBody3D" parent="Decorations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.9, -8.8, -9.1)
+
+[node name="floor2" parent="Decorations/Floor" instance=ExtResource("112_2r0km")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, -2.4)
+
+[node name="floor3" parent="Decorations/Floor" instance=ExtResource("112_2r0km")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0999985, 0, -2.4)
+
+[node name="floor4" parent="Decorations/Floor" instance=ExtResource("112_2r0km")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6, 0, -2.4)
+
+[node name="floor5" parent="Decorations/Floor" instance=ExtResource("112_2r0km")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 0.0999994)
+
+[node name="floor6" parent="Decorations/Floor" instance=ExtResource("112_2r0km")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0999985, 0, 0.0999994)
+
+[node name="floor7" parent="Decorations/Floor" instance=ExtResource("112_2r0km")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6, 0, 0.0999994)
+
+[node name="floor8" parent="Decorations/Floor" instance=ExtResource("112_2r0km")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 2.6)
+
+[node name="floor9" parent="Decorations/Floor" instance=ExtResource("112_2r0km")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0999985, 0, 2.6)
+
+[node name="floor10" parent="Decorations/Floor" instance=ExtResource("112_2r0km")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6, 0, 2.6)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decorations/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0.19, 0.15)
+shape = SubResource("BoxShape3D_mq2e6")
+
+[node name="Campfire" type="StaticBody3D" parent="Decorations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.3, -8.6, -18.4)
+
+[node name="campfire-pit2" parent="Decorations/Campfire" instance=ExtResource("112_yxdgt")]
+
+[node name="campfire-stand2" parent="Decorations/Campfire" instance=ExtResource("113_2r0km")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decorations/Campfire"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+shape = SubResource("BoxShape3D_d7jg3")
+
+[node name="fish2" parent="Decorations/Campfire" instance=ExtResource("112_mq2e6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8147e-06, 0.8, 1.90735e-06)
+visible = false
+
+[node name="Dock" type="StaticBody3D" parent="Decorations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.4, -9.8, 8.4)
+
+[node name="structure-platform-dock2" parent="Decorations/Dock" instance=ExtResource("1_s2i5k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.9)
+
+[node name="structure-platform2" parent="Decorations/Dock" instance=ExtResource("2_v36do")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.899999)
+
+[node name="structure-platform3" parent="Decorations/Dock" instance=ExtResource("2_v36do")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.4)
+
+[node name="structure-platform4" parent="Decorations/Dock" instance=ExtResource("2_v36do")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.9)
+visible = false
+
+[node name="structure-platform5" parent="Decorations/Dock" instance=ExtResource("2_v36do")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.4)
+
+[node name="DockCollision" type="CollisionShape3D" parent="Decorations/Dock"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 5.95)
+shape = SubResource("BoxShape3D_inymm")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Decorations/Dock"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.1, 11.9)
+shape = SubResource("BoxShape3D_jcxqu")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Decorations/Dock"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.1, 11.9)
+shape = SubResource("BoxShape3D_jcxqu")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Decorations/Dock"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.1, 9.9)
+shape = SubResource("BoxShape3D_jcxqu")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Decorations/Dock"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.1, 9.9)
+shape = SubResource("BoxShape3D_jcxqu")
+
+[node name="Npcs" type="Node" parent="."]
+
+[node name="GoldenApe" parent="Npcs" instance=ExtResource("91_yv5t4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.8, -8.7, -18.8)
+animation = "Dancing2"
+skin_material = SubResource("StandardMaterial3D_wy5fy")
+
+[node name="EvilMonkey" parent="Npcs" instance=ExtResource("91_yv5t4")]
+transform = Transform3D(-0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, -0.984808, -8.3, -7.2, 28.2)
+animation = "Man_Run"
+skin_material = SubResource("StandardMaterial3D_yysqy")
+face_material = SubResource("StandardMaterial3D_n5t1e")
+
+[node name="DockMonkey" parent="Npcs" instance=ExtResource("91_yv5t4")]
+transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -35, -8.9, 19.6)
+animation = "Armature|mixamo_com|Layer0"
+skin_material = SubResource("StandardMaterial3D_inymm")
+
+[node name="ElderMonkey" parent="Npcs" instance=ExtResource("91_yv5t4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.1, -8.5, -10.9)
+skin_material = SubResource("StandardMaterial3D_2r0km")
+skin_detail_material = SubResource("StandardMaterial3D_mq2e6")
 
 [editable path="GodotSky"]

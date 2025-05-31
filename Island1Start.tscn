@@ -1,4 +1,4 @@
-[gd_scene load_steps=147 format=3 uid="uid://dxo8m8y6lnqo1"]
+[gd_scene load_steps=148 format=3 uid="uid://dxo8m8y6lnqo1"]
 
 [ext_resource type="PackedScene" uid="uid://qjqve05lgky6" path="res://Models/TerrainAssets/Pirate/structure-platform-dock.glb" id="1_gyhwg"]
 [ext_resource type="PackedScene" uid="uid://nmpf6ltddfb3" path="res://Models/TerrainAssets/Pirate/structure-platform.glb" id="2_cx0or"]
@@ -96,6 +96,7 @@
 [ext_resource type="Texture2D" uid="uid://b4j3fhv8euxxo" path="res://Models/MetaAssets/grass.png" id="95_sqslx"]
 [ext_resource type="Script" uid="uid://043vjblb04jf" path="res://addons/terrabrush/Scripts/EditorResources/TextureSetsResource.cs" id="96_vq8ay"]
 [ext_resource type="Texture2D" uid="uid://b7ixhh8ktm5bh" path="res://Models/TerrainMeta_Island1_Start/Heightmap_1_0_meta_new.res" id="97_wofg6"]
+[ext_resource type="Texture2D" uid="uid://dvlbpyrspae80" path="res://Models/TerrainMeta_Island1_Start/Splatmap_0_0_0.res" id="98_cx0or"]
 [ext_resource type="Texture2D" uid="uid://bppnolt7tbjvy" path="res://Models/Terrain_Island1_Start/Splatmap_1_0_0.res" id="98_gyhwg"]
 [ext_resource type="PackedScene" uid="uid://1gfropwtqfbn" path="res://GodotSky/GodotSky.tscn" id="99_v6orx"]
 [ext_resource type="PackedScene" uid="uid://drenu2srr1q61" path="res://Character/player.tscn" id="100_oelay"]
@@ -357,7 +358,7 @@ metadata/_custom_type_script = "uid://043vjblb04jf"
 script = ExtResource("88_so4m5")
 ZonePosition = Vector2i(0, 0)
 HeightMapTexture = ExtResource("97_wofg6")
-SplatmapsTexture = [ExtResource("98_gyhwg")]
+SplatmapsTexture = [ExtResource("98_cx0or")]
 FoliagesTexture = []
 ObjectsTexture = []
 
@@ -455,6 +456,7 @@ skin_material = SubResource("StandardMaterial3D_inymm")
 
 [node name="TerrainMeta" type="Node3D" parent="Island"]
 unique_name_in_owner = true
+visible = false
 script = ExtResource("3_re08y")
 CollisionOnly = true
 DataPath = "res://Models/TerrainMeta_Island1_Start"
